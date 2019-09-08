@@ -97,3 +97,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Alias to go into doom directory
+alias doomDir="cd ~/.config/gzdoom/WADS"
+
+#Alias to launch gzdoom
+alias doom="gzdoom -file"
