@@ -101,5 +101,8 @@ source $ZSH/oh-my-zsh.sh
 # Alias to go into doom directory
 alias doomDir="cd ~/.config/gzdoom/WADS"
 
-#Alias to launch gzdoom
-alias doom="gzdoom -file"
+#Alias to launch doom gzdoom
+alias doom="gzdoom -file DOOM.WAD"
+
+#Alias to launch doom2 gzdoom
+alias doom2="gzdoom -file DOOM2.WAD"
