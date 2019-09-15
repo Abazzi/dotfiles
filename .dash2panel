@@ -1,3 +1,5 @@
 [/]
 panel-size=32
 hotkeys-overlay-combo='TEMPORARILY'
+trans-panel-opacity=1.0
+animate-show-apps=true

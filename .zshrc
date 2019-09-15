@@ -106,3 +106,6 @@ alias doom="gzdoom -file DOOM.WAD"
 
 #Alias to launch doom2 gzdoom
 alias doom2="gzdoom -file DOOM2.WAD"
+
+#Alias to Change Directory to quakespam Directory 
+alias quakeDir="cd ~/home/adam/Documents/quakeSpasm/quakespasm-0.93.1_amd64"
