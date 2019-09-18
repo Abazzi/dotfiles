@@ -93,19 +93,16 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Alias to go into doom directory
+#Aliases
 alias doomDir="cd ~/.config/gzdoom/WADS"
 
-#Alias to launch doom gzdoom
 alias doom="gzdoom -file DOOM.WAD"
 
-#Alias to launch doom2 gzdoom
 alias doom2="gzdoom -file DOOM2.WAD"
 
-#Alias to Change Directory to quakespam Directory 
 alias quakeDir="cd /home/adam/Documents/quakeSpasm/quakespasm-0.93.1_amd64"
+
+alias hexenDir="cd /home/adam/Documents/hexen/"
+
+alias hexen="gzdoom -file HEXEN.WAD"
