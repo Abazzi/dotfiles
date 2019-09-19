@@ -95,14 +95,8 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 
 #Aliases
-alias doomDir="cd ~/.config/gzdoom/WADS"
-
 alias doom="gzdoom -file DOOM.WAD"
-
 alias doom2="gzdoom -file DOOM2.WAD"
-
-alias quakeDir="cd /home/adam/Documents/quakeSpasm/quakespasm-0.93.1_amd64"
-
-alias hexenDir="cd /home/adam/Documents/hexen/"
-
 alias hexen="gzdoom -file HEXEN.WAD"
+alias heretic="gzdoom -file HERETIC.WAD"
+alias wads="cd /home/adam/Documents/WADS"
