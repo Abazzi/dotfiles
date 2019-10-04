@@ -1,6 +1,5 @@
 # If you come from bash you might have to change your $PATH.
 #export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 export PATH="/home/adam/.config/composer/vendor/bin:$PATH"
 # Path to your oh-my-zsh installation.
 export ZSH="/home/adam/.oh-my-zsh"
@@ -10,7 +9,7 @@ export ZSH="/home/adam/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="fishy"
+ZSH_THEME="dracula"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -104,3 +103,5 @@ alias hexen="gzdoom -file HEXEN.WAD"
 alias heretic="gzdoom -file HERETIC.WAD"
 alias wads="cd /home/adam/Documents/WADS"
 alias laravel="/home/adam/.config/composer/vendor/bin/laravel"
+alias serve="php artisan serve"
+alias fistfull="gzdoom -file DOOM2.WAD FISTFUL.WAD FISTFIX.WAD"
