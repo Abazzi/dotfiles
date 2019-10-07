@@ -84,7 +84,7 @@ source $ZSH/oh-my-zsh.sh
  if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='vim'
  else
-   export EDITOR='vim'
+   export EDITOR='nano'
  fi
 
 # Compilation flags
@@ -105,3 +105,7 @@ alias wads="cd /home/adam/Documents/WADS"
 alias laravel="/home/adam/.config/composer/vendor/bin/laravel"
 alias serve="php artisan serve"
 alias fistfull="gzdoom -file DOOM2.WAD FISTFUL.WAD FISTFIX.WAD"
+alias plexstart="service plexmediaserver start"
+alias plexstop="service plexmediaserver stop"
+
+
