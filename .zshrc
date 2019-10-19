@@ -96,9 +96,9 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 
 #Aliases
-alias doom="gzdoom -file DOOM.WAD"
-alias doomssg="gzdoom -file DOOM.WAD SSG.WAD"
-alias doom2="gzdoom -file DOOM2.WAD"
+alias doom="gzdoom -file DOOM.WAD vsmooth.wad"
+alias doomssg="gzdoom -file DOOM.WAD SSG.wad vsmooth.wad"
+alias doom2="gzdoom -file DOOM2.WAD vsmooth.wad"
 alias hexen="gzdoom -file HEXEN.WAD"
 alias heretic="gzdoom -file HERETIC.WAD"
 alias wads="cd /home/adam/Documents/WADS"
@@ -107,5 +107,7 @@ alias serve="php artisan serve"
 alias fistfull="gzdoom -file DOOM2.WAD FISTFUL.WAD FISTFIX.WAD"
 alias plexstart="service plexmediaserver start"
 alias plexstop="service plexmediaserver stop"
-
-
+alias pb1="doom -file ~/Documents/WADS/projectBrutality/Project\ Brutality\ 2.03.pk3 -file ~/Documents/WADS/projectBrutality/External\ Files/HUDs/UDV/UDV_v1.62_A_BASE_GZDoomOnly.pk3"
+alias pb2="doom2 -file ~/Documents/WADS/projectBrutality/Project\ Brutality\ 2.03.pk3 -file ~/Documents/WADS/projectBrutality/External\ Files/HUDs/UDV/UDV_v1.62_A_BASE_GZDoomOnly.pk3"
+alias guncaster="gzdoom -file DOOM.WAD guncaster/Guncaster.pk3 guncaster/GC_Addon.pk3 guncaster/zscript.txt"
+alias ds4="sudo ds4drv --hidraw --emulate-xboxdrv --led BD93F9"
