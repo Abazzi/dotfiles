@@ -3,8 +3,6 @@ execute pathogen#infect()
 " Encoding
 set encoding=utf-8
 
-colorscheme dracula
-
 "disable compatibility mode with vi"
 set nocompatible
 
