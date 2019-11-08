@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 #export PATH=$HOME/bin:/usr/local/bin:$PATH
-#export PATH="/home/adam/.config/composer/vendor/bin:$PATH"
+export PATH="/home/adam/.config/composer/vendor/bin:$PATH"
 # Path to your oh-my-zsh installation.
 export ZSH="/home/adam/.oh-my-zsh"
 
@@ -80,12 +80,67 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
+#VI Mode
+# vi mode
+bindkey -v
+export KEYTIMEOUT=1
+
+# Use vim keys in tab complete menu:
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -v '^?' backward-delete-char
+
+# Change cursor shape for different vi modes.
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] ||
+     [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+  elif [[ ${KEYMAP} == main ]] ||
+       [[ ${KEYMAP} == viins ]] ||
+       [[ ${KEYMAP} = '' ]] ||
+       [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
+}
+zle -N zle-keymap-select
+zle-line-init() {
+    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+    echo -ne "\e[5 q"
+}
+zle -N zle-line-init
+echo -ne '\e[5 q' # Use beam shape cursor on startup.
+preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+
+# Use lf to switch directories and bind it to ctrl-o
+lfcd () {
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+    fi
+}
+bindkey -s '^o' 'lfcd\n'
+
+# Edit line in vim with ctrl-e:
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^e' edit-command-line
+
+
 # Preferred editor for local and remote sessions
  if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='vim'
  else
    export EDITOR='nano'
  fi
+
+#Edit line with vim ctrl-e
+export VISUAL=vim
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^e' edit-command-line
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -101,17 +156,18 @@ alias doomssg="gzdoom -file DOOM.WAD SSG.wad vsmooth.wad"
 alias doom2="gzdoom -file DOOM2.WAD vsmooth.wad"
 alias hexen="gzdoom -file HEXEN.WAD"
 alias heretic="gzdoom -file HERETIC.WAD"
-alias wads="cd /home/adam/Documents/WADS"
-alias laravel="/home/adam/.config/composer/vendor/bin/laravel"
+alias wads="cd /$HOME/Documents/WADS"
+alias laravel="/$HOME/.config/composer/vendor/bin/laravel"
 alias serve="php artisan serve"
 alias quakedir="cd $HOME/Documents/WADS/quake"
 alias fistfull="gzdoom -file DOOM2.WAD FISTFUL.WAD FISTFIX.WAD"
 alias plexstart="service snap.plexmediaserver.plexmediaserver start"
 alias plexstop="service snap.plexmediaserver.plexmediaserver stop"
-alias pb1="doom -file ~/Documents/WADS/projectBrutality/Project\ Brutality\ 2.03.pk3 -file ~/Documents/WADS/projectBrutality/External\ Files/HUDs/UDV/UDV_v1.62_A_BASE_GZDoomOnly.pk3"
-alias pb2="doom2 -file ~/Documents/WADS/projectBrutality/Project\ Brutality\ 2.03.pk3 -file ~/Documents/WADS/projectBrutality/External\ Files/HUDs/UDV/UDV_v1.62_A_BASE_GZDoomOnly.pk3"
+alias pb1="doom -file $HOME/Documents/WADS/projectBrutality/Project\ Brutality\ 2.03.pk3 -file $HOME/Documents/WADS/projectBrutality/External\ Files/HUDs/UDV/UDV_v1.62_A_BASE_GZDoomOnly.pk3"
+alias pb2="doom2 -file $HOME/Documents/WADS/projectBrutality/Project\ Brutality\ 2.03.pk3 -file $HOME/Documents/WADS/projectBrutality/External\ Files/HUDs/UDV/UDV_v1.62_A_BASE_GZDoomOnly.pk3"
 alias guncaster="gzdoom -file DOOM.WAD guncaster/Guncaster.pk3 guncaster/GC_Addon.pk3 guncaster/zscript.txt"
 alias ds4="sudo ds4drv --hidraw --emulate-xboxdrv --led BD93F9"
 alias videos="cd /mnt/99d29387-e936-4b1a-9d8b-491e81b44e89/Videos"
 alias upgrade="sudo apt-get upgrade"
 alias update="sudo apt-get update"
+alias install="sudo apt-get install"
