@@ -128,6 +128,7 @@ alias videos="cd /mnt/99d29387-e936-4b1a-9d8b-491e81b44e89/Videos"
 alias upgrade="sudo apt-get upgrade"
 alias update="sudo apt-get update"
 alias install="sudo apt-get install"
+alias keepassxc="keepassxc-cli show Passwords.kdbx"
 
 # Syntax Highling Path.
 source /home/adam/Documents/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
