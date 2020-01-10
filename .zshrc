@@ -105,24 +105,26 @@ bindkey '^e' edit-command-line
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
 
-#Aliases
+#Aliases for Games like DOOM and DOOM 2
 alias doom="gzdoom -file DOOM.WAD vsmooth.wad"
 alias doomssg="gzdoom -file DOOM.WAD SSG.wad vsmooth.wad"
 alias doom2="gzdoom -file DOOM2.WAD vsmooth.wad"
 alias hexen="gzdoom -file HEXEN.WAD"
 alias heretic="gzdoom -file HERETIC.WAD"
 alias wads="cd /$HOME/Documents/WADS"
-alias laravel="/$HOME/.config/composer/vendor/bin/laravel"
-alias serve="php artisan serve"
 alias quakedir="cd $HOME/Documents/WADS/quake"
 alias fistfull="gzdoom -file DOOM2.WAD FISTFUL.WAD FISTFIX.WAD"
 alias pb1="doom -file $HOME/Documents/WADS/projectBrutality/Project\ Brutality\ 2.03.pk3 -file $HOME/Documents/WADS/projectBrutality/External\ Files/HUDs/UDV/UDV_v1.62_A_BASE_GZDoomOnly.pk3"
 alias pb2="doom2 -file $HOME/Documents/WADS/projectBrutality/Project\ Brutality\ 2.03.pk3 -file $HOME/Documents/WADS/projectBrutality/External\ Files/HUDs/UDV/UDV_v1.62_A_BASE_GZDoomOnly.pk3"
 alias guncaster="gzdoom -file DOOM.WAD guncaster/Guncaster.pk3 guncaster/GC_Addon.pk3 guncaster/zscript.txt"
-alias ls='ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal'
 
+#Aliases for laravel related commands
+alias laravel="/$HOME/.config/composer/vendor/bin/laravel"
+alias serve="php artisan serve"
+
+#Aliases for everything else
+alias ls='ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal'
 # Syntax Highling Path.
 source /home/adam/Documents/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
