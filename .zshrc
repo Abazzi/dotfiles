@@ -121,11 +121,6 @@ alias fistfull="gzdoom -file DOOM2.WAD FISTFUL.WAD FISTFIX.WAD"
 alias pb1="doom -file $HOME/Documents/WADS/projectBrutality/Project\ Brutality\ 2.03.pk3 -file $HOME/Documents/WADS/projectBrutality/External\ Files/HUDs/UDV/UDV_v1.62_A_BASE_GZDoomOnly.pk3"
 alias pb2="doom2 -file $HOME/Documents/WADS/projectBrutality/Project\ Brutality\ 2.03.pk3 -file $HOME/Documents/WADS/projectBrutality/External\ Files/HUDs/UDV/UDV_v1.62_A_BASE_GZDoomOnly.pk3"
 alias guncaster="gzdoom -file DOOM.WAD guncaster/Guncaster.pk3 guncaster/GC_Addon.pk3 guncaster/zscript.txt"
-alias ds4="sudo ds4drv --hidraw --emulate-xboxdrv --led BD93F9"
-alias videos="cd /mnt/99d29387-e936-4b1a-9d8b-491e81b44e89/Videos"
-alias upgrade="sudo apt-get upgrade"
-alias update="sudo apt-get update"
-alias install="sudo apt-get install"
 alias ls='ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal'
 
 # Syntax Highling Path.
