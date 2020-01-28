@@ -2,7 +2,7 @@
 export PATH="$PATH:$HOME/bin:/usr/local/bin:"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/adam/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 
 # Set name of the theme to load --- if set to "random", it will
@@ -112,7 +112,7 @@ alias doomssg="gzdoom -file DOOM.WAD SSG.wad vsmooth.wad"
 alias doom2="gzdoom -file DOOM2.WAD vsmooth.wad"
 alias hexen="gzdoom -file HEXEN.WAD"
 alias heretic="gzdoom -file HERETIC.WAD"
-alias wads="cd /$HOME/Documents/WADS"
+alias wads="cd $HOME/Documents/WADS"
 alias quakedir="cd $HOME/Documents/WADS/quake"
 alias fistfull="gzdoom -file DOOM2.WAD FISTFUL.WAD FISTFIX.WAD"
 alias pb1="doom -file $HOME/Documents/WADS/projectBrutality/Project\ Brutality\ 2.03.pk3 -file $HOME/Documents/WADS/projectBrutality/External\ Files/HUDs/UDV/UDV_v1.62_A_BASE_GZDoomOnly.pk3"
@@ -121,13 +121,12 @@ alias guncaster="gzdoom -file DOOM.WAD guncaster/Guncaster.pk3 guncaster/GC_Addo
 
 #Aliases for laravel related commands
 alias serve="php artisan serve"
-#alias laravel="$HOME/.config/composer/vendor/bin/laravel"
 
 #Aliases for everything else
 #alias ls="ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal"
 
 # Syntax Highling Path.
-source /Users/adam/Documents/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/Documents/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 autoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
