@@ -1,8 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-#export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+export PATH="$PATH:$HOME/bin:/usr/local/bin:"
+export PATH="$PATH:$HOME/.composer/vendor/bin"
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="/Users/adam/.oh-my-zsh"
 
 
 # Set name of the theme to load --- if set to "random", it will
@@ -120,13 +120,14 @@ alias pb2="doom2 -file $HOME/Documents/WADS/projectBrutality/Project\ Brutality\
 alias guncaster="gzdoom -file DOOM.WAD guncaster/Guncaster.pk3 guncaster/GC_Addon.pk3 guncaster/zscript.txt"
 
 #Aliases for laravel related commands
-alias laravel="/$HOME/.config/composer/vendor/bin/laravel"
 alias serve="php artisan serve"
+#alias laravel="$HOME/.config/composer/vendor/bin/laravel"
 
 #Aliases for everything else
-alias ls='ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal'
+#alias ls="ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal"
+
 # Syntax Highling Path.
-source /home/adam/Documents/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /Users/adam/Documents/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 autoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
