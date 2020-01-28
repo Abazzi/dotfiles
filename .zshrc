@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 export PATH="$PATH:$HOME/bin:/usr/local/bin:"
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -123,7 +124,7 @@ alias guncaster="gzdoom -file DOOM.WAD guncaster/Guncaster.pk3 guncaster/GC_Addo
 alias serve="php artisan serve"
 
 #Aliases for everything else
-#alias ls="ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal"
+alias ls="ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal"
 
 # Syntax Highling Path.
 source $HOME/Documents/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
