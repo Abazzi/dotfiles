@@ -125,7 +125,8 @@ alias serve="php artisan serve"
 
 #Aliases for everything else
 alias ls="ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal"
-alias sdv = "sudo vim"
+
+alias sdv="sudo vim"
 
 # Syntax Highling Path.
 source $HOME/Documents/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
