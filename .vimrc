@@ -19,6 +19,9 @@ set number
 "show file stats"
 set ruler
 
+"Color Scheme"
+colorscheme dracula
+
 "Whitespace"
 set wrap
 set textwidth=79
