@@ -128,8 +128,5 @@ alias ls="ls --color=auto --group-directories-first --time-style=iso --quoting-s
 
 alias sdv="sudo vim"
 
-# Syntax Highling Path.
-source $HOME/Documents/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 autoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
