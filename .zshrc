@@ -127,6 +127,7 @@ alias serve="php artisan serve"
 alias ls="ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal"
 
 alias sdv="sudo vim"
+alias vim="nvim"
 
 autoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
