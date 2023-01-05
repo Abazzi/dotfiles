@@ -12,3 +12,5 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 
 require('packer-plugins')
+require('mason').setup()
+require('treesitter')
