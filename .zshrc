@@ -123,11 +123,13 @@ alias guncaster="gzdoom -file DOOM.WAD guncaster/Guncaster.pk3 guncaster/GC_Addo
 #Aliases for laravel related commands
 alias serve="php artisan serve"
 
+#Aliases for git
+alias git amend="git commit --amend"
+
 #Aliases for everything else
 alias ls="ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal"
 
 alias sdv="sudo vim"
-alias vim="nvim"
 
 autoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "

@@ -22,13 +22,27 @@ return require('packer').startup(function()
 	}
 
 	use {
+	  "lukas-reineke/indent-blankline.nvim",
+	  config = function()
+		require("indent_blankline").setup { filetype_exclude = { "dashboard" }
+		}
+	  end
+	}
+
+	use {
         'nvim-treesitter/nvim-treesitter'
     	}
+	use {'glepnir/dashboard-nvim'}
 
-	
 	-- lspconfig
 	use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
 	use { "williamboman/mason.nvim" }
+	use 'nvim-tree/nvim-web-devicons'
+
+	use {
+	  'nvim-lualine/lualine.nvim',
+	  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+	}
 
 end)
 
