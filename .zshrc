@@ -124,7 +124,11 @@ alias guncaster="gzdoom -file DOOM.WAD guncaster/Guncaster.pk3 guncaster/GC_Addo
 alias serve="php artisan serve"
 
 #Aliases for git
-alias git amend="git commit --amend"
+alias gamend="git commit --amend"
+alias gcm="git commit -m"
+alias gps="git push origin staging"
+alias gm="git merge"
+alias ga="git add ."
 
 #Aliases for everything else
 alias ls="ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal"
