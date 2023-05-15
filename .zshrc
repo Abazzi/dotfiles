@@ -129,6 +129,7 @@ alias gcm="git commit -m"
 alias gm="git merge"
 alias ga="git add ."
 alias gpo="git push origin"
+alias gc="git checkout"
 
 #Aliases for everything else
 alias ls="ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal"
