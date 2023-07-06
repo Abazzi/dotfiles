@@ -36,5 +36,3 @@ set laststatus=2
 
 syntax on
 filetype plugin indent on
-
-map <silent> <C-n> :NERDTreeToggle<CR>
