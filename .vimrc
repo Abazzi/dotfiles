@@ -20,7 +20,6 @@ set number
 set ruler
 
 "Color Scheme"
-colorscheme dracula
 
 "Whitespace"
 set wrap
