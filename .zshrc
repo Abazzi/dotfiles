@@ -129,7 +129,7 @@ alias sdv="sudo vim"
 autoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
-alias odinJS="cd $HOME/code/theOdinProject/foundations/javascript"
+alias odinJS="cd $HOME/code/top_fullStackJS/javascript"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
