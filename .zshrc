@@ -131,9 +131,14 @@ autoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
 alias odinJS='() {cd $HOME/code/top_fullStackJS/javascript/$1}'
+alias coded='() {cd $HOME/code/$1}'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+## cd into nvim config folder
+alias nvimc="cd $HOME/.config/nvim"
+
+## Code Directory Generator Script
 alias cdg="~/dotfiles/./codeDirectoryGenerator.sh"
