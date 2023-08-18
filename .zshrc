@@ -120,6 +120,7 @@ alias ga="git add ."
 alias gpo="git push origin"
 alias gc="git checkout"
 alias gp="git pull"
+alias glo="git log --oneline"
 
 #Aliases for everything else
 alias ls="ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal"
