@@ -140,5 +140,11 @@ export NVM_DIR="$HOME/.nvm"
 ## cd into nvim config folder
 alias nvimc="cd $HOME/.config/nvim"
 
+## cd into nvim config folder on Windows
+alias nvimcw="cd $HOME/AppData/Local/nvim"
+
+## nvim alias to just go into directory
+alias nvim="nvim ."
+
 ## Code Directory Generator Script
 alias cdg="~/dotfiles/./codeDirectoryGenerator.sh"
