@@ -4,6 +4,7 @@ export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 
 
 # Set name of the theme to load --- if set to "random", it will
@@ -130,15 +131,12 @@ alias sdv="sudo vim"
 autoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
-alias odinJS='() {cd $HOME/code/top_fullStackJS/javascript/$1}'
-alias coded='() {cd $HOME/code/$1}'
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-## cd into nvim config folder
-alias nvimc="cd $HOME/.config/nvim"
+## launch fzf
+alias ff='fzf'
 
 ## cd into nvim config folder on Windows
 alias nvimcw="cd $HOME/AppData/Local/nvim"
@@ -148,3 +146,29 @@ alias nvim="nvim ."
 
 ## Code Directory Generator Script
 alias cdg="~/dotfiles/./codeDirectoryGenerator.sh"
+
+## fuzzy finder into directory
+fd() {
+ local dir
+ dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
+ cd "$dir"
+}
+
+# cf - fuzzy cd from anywhere
+# ex: cf word1 word2 ... (even part of a file name)
+# zsh autoload function
+cf() {
+  local file
+
+  file="$(locate -Ai -0 $@ | grep -z -vE '~$' | fzf --read0 -0 -1)"
+
+  if [[ -n $file ]]
+  then
+     if [[ -d $file ]]
+     then
+        cd -- $file
+     else
+        cd -- ${file:h}
+     fi
+  fi
+}
