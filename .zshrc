@@ -11,7 +11,7 @@ export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap 
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="af-magic"
+ZSH_THEME="cloud"
 
 # Uncomment the following line to change how often to auto-update (in days).
 export UPDATE_ZSH_DAYS=14
@@ -126,8 +126,6 @@ alias glo="git log --oneline"
 #Aliases for everything else
 alias ls="ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal"
 
-alias sdv="sudo vim"
-
 autoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
@@ -138,8 +136,14 @@ export NVM_DIR="$HOME/.nvm"
 ## cd into nvim config folder on Windows
 alias nvimcw="cd $HOME/AppData/Local/nvim"
 
+## cd into code directory
+alias code="cd $HOME/code"
+
+## run npm run watch
+alias watch="npm run watch"
+
 ## nvim alias to just go into directory
-alias nvim="nvim ."
+alias vim="nvim ."
 
 ## Code Directory Generator Script
 alias cdg="~/dotfiles/./codeDirectoryGenerator.sh"
