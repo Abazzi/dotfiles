@@ -108,31 +108,6 @@ bindkey '^e' edit-command-line
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 
-#Aliases for running DOOM from terminal
-alias wads="cd $HOME/WADS"
-alias doom="gzdoom -file DOOM.WAD GAMEPLAY/SmoothDoom.pk3"
-alias doom2="gzdoom -file DOOM2.WAD GAMEPLAY/SmoothDoom.pk3"
-
-#Aliases for git
-alias gamend="git commit --amend"
-alias gcm="git commit -m"
-alias gm="git merge"
-alias ga="git add ."
-alias gpo="git push origin"
-alias gc="git checkout"
-alias gp="git pull"
-alias glo="git log --oneline"
-
-#Aliases for everything else
-alias ls="ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal"
-
-autoload -U colors && colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 ## cd into nvim config folder on Windows
 alias nvimcw="cd $HOME/AppData/Local/nvim"
 
@@ -173,3 +148,30 @@ cf() {
      fi
   fi
 }
+
+#Aliases for running DOOM from terminal
+alias wads="cd $HOME/WADS"
+alias doom="gzdoom -file DOOM.WAD GAMEPLAY/SmoothDoom.pk3"
+alias doom2="gzdoom -file DOOM2.WAD GAMEPLAY/SmoothDoom.pk3"
+
+#Aliases for git
+alias gclone="git clone"
+alias gamend="git commit --amend"
+alias gcm="git commit -m"
+alias gm="git merge"
+alias ga="git add ."
+alias gpo="git push origin"
+alias gc="git checkout"
+alias gp="git pull"
+alias glo="git log --oneline"
+
+#Aliases for everything else
+alias ls="ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal"
+
+autoload -U colors && colors
+PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
