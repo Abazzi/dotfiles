@@ -1,7 +1,5 @@
 # If you come from bash you might have to change your $PATH.
 export PATH="$PATH:$HOME/bin:/usr/local/bin:"
-export PATH="$PATH:$HOME/.config/composer/vendor/bin"
-export PATH="$PATH:$HOME/.composer/vendor/bin"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
@@ -97,7 +95,7 @@ bindkey '^e' edit-command-line
  fi
 
 #Edit line with vim ctrl-e
-export VISUAL=vim
+export VISUAL=nvim
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
@@ -165,13 +163,24 @@ alias gc="git checkout"
 alias gp="git pull"
 alias glo="git log --oneline"
 
+#Aliases for tmux
+alias tk="tmux kill-session"
+alias td="tmux detach"
+alias tl="tmux ls"
+alias ta="tmux a"
+alias tkserver="tmux kill-server"
+alias tnc="tmux new -s c"
+alias tnj="tmux new -s javascript"
+alias tac="tmux a -t c"
+alias taj="tmux a -t javascript"
+alias tkc="tmux kill-sess -t c"
+alias tkj="tmux kill-sess -t javascript"
+
 #Aliases for everything else
 alias ls="ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal"
 
 autoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
