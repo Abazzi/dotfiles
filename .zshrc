@@ -2,6 +2,7 @@
 export PATH="$PATH:$HOME/bin:/usr/local/bin:"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export EXERCISM="$HOME/.bin"
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 
 
@@ -106,18 +107,6 @@ bindkey '^e' edit-command-line
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 
-## cd into nvim config folder on Windows
-alias nvimcw="cd $HOME/AppData/Local/nvim"
-
-## cd into code directory
-alias code="cd $HOME/code"
-
-## run npm run watch
-alias watch="npm run watch"
-
-## nvim alias to just go into directory
-alias vim="nvim ."
-
 ## Code Directory Generator Script
 alias cdg="~/dotfiles/./codeDirectoryGenerator.sh"
 
@@ -178,6 +167,21 @@ alias tkj="tmux kill-sess -t javascript"
 
 #Aliases for everything else
 alias ls="ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal"
+## cd into nvim config folder on Windows
+alias nvimcw="cd $HOME/AppData/Local/nvim"
+
+## cd into code directory
+alias code="cd $HOME/code"
+
+## run npm run watch
+alias watch="npm run watch"
+
+## run npm run serve (webpack) 
+alias watch="npm run serve"
+
+## nvim alias to just go into directory
+alias vim="nvim ."
+
 
 autoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
