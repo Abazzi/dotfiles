@@ -177,7 +177,7 @@ alias code="cd $HOME/code"
 alias watch="npm run watch"
 
 ## run npm run serve (webpack) 
-alias watch="npm run serve"
+alias serve="npm run serve"
 
 ## nvim alias to just go into directory
 alias vim="nvim ."
