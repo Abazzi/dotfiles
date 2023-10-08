@@ -136,12 +136,29 @@ cf() {
   fi
 }
 
-#Aliases for running DOOM from terminal
+## Pomodoro Timer ###
+# Requires https://github.com/caarlos0/timer and lolcat
+declare -A pomo_options
+pomo_options["work"]="45"
+pomo_options["break"]="15"
+pomo_options["test"]="10"
+
+pomodoro () {
+  if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
+  val=$1
+  echo $val | lolcat
+  timer ${pomo_options["$val"]}s
+  echo "'$val' session done" | lolcat
+  echo -n -e "\a"
+  fi
+}
+
+### Aliases for running DOOM from terminal ###
 alias wads="cd $HOME/WADS"
 alias doom="gzdoom -file DOOM.WAD GAMEPLAY/SmoothDoom.pk3"
 alias doom2="gzdoom -file DOOM2.WAD GAMEPLAY/SmoothDoom.pk3"
 
-#Aliases for git
+### Aliases for git (when not using fugitive) ###
 alias gclone="git clone"
 alias gamend="git commit --amend"
 alias gcm="git commit -m"
@@ -152,7 +169,7 @@ alias gc="git checkout"
 alias gp="git pull"
 alias glo="git log --oneline"
 
-#Aliases for tmux
+### Aliases for tmux ###
 alias tk="tmux kill-session"
 alias td="tmux detach"
 alias tl="tmux ls"
@@ -165,23 +182,30 @@ alias taj="tmux a -t javascript"
 alias tkc="tmux kill-sess -t c"
 alias tkj="tmux kill-sess -t javascript"
 
-#Aliases for everything else
+### Aliases for everything else ###
+
+# better ls
 alias ls="ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal"
-## cd into nvim config folder on Windows
+
+# cd into nvim config folder on Windows
 alias nvimcw="cd $HOME/AppData/Local/nvim"
 
-## cd into code directory
+# cd into code directory
 alias code="cd $HOME/code"
 
-## run npm run watch
+# run npm run watch
 alias watch="npm run watch"
 
-## run npm run serve (webpack) 
+# run npm run serve (webpack) 
 alias serve="npm run serve"
 
-## nvim alias to just go into directory
+# nvim alias to just go into directory
 alias vim="nvim ."
 
+
+alias wo="pomodoro 'work'"
+alias br="pomodoro 'break'"
+alias ptest="pomodoro 'test'"
 
 autoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
