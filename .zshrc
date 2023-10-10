@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 export PATH="$PATH:$HOME/bin:/usr/local/bin:"
+export PATH="$PATH:/usr/local/go/bin"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export EXERCISM="$HOME/.bin"
@@ -141,16 +142,22 @@ cf() {
 declare -A pomo_options
 pomo_options["work"]="45"
 pomo_options["break"]="15"
-pomo_options["test"]="10"
+pomo_options["test"]="5"
 
 pomodoro () {
   if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
   val=$1
   echo $val | lolcat
-  timer ${pomo_options["$val"]}m
+  timer ${pomo_options["$val"]}s
   echo "'$val' session done" | lolcat
+  timer-notify-send
   echo -n -e "\a"
   fi
+}
+
+timer-notify-send(){
+  notify-send "Timer is Done" --icon="wizard-hat"
+  
 }
 
 ### Aliases for running DOOM from terminal ###
