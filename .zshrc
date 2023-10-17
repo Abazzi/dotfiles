@@ -148,7 +148,7 @@ pomodoro () {
   if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
   val=$1
   echo $val | lolcat
-  timer ${pomo_options["$val"]}s
+  timer ${pomo_options["$val"]}m
   echo "'$val' session done" | lolcat
   timer-notify-send
   echo -n -e "\a"
@@ -156,8 +156,7 @@ pomodoro () {
 }
 
 timer-notify-send(){
-  notify-send "Timer is Done" --icon="wizard-hat"
-  
+  notify-send "Timer is Done" "Nice dawg ;)" --icon="wizard-hat"
 }
 
 ### Aliases for running DOOM from terminal ###
@@ -181,7 +180,7 @@ alias tk="tmux kill-session"
 alias td="tmux detach"
 alias tl="tmux ls"
 alias ta="tmux a"
-alias tkserver="tmux kill-server"
+alias tks="tmux kill-server"
 alias tnc="tmux new -s c"
 alias tnj="tmux new -s javascript"
 alias tac="tmux a -t c"
@@ -194,12 +193,6 @@ alias tkj="tmux kill-sess -t javascript"
 # better ls
 alias ls="ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal"
 
-# cd into nvim config folder on Windows
-alias nvimcw="cd $HOME/AppData/Local/nvim"
-
-# cd into code directory
-alias code="cd $HOME/code"
-
 # run npm run watch
 alias watch="npm run watch"
 
@@ -209,7 +202,7 @@ alias serve="npm run serve"
 # nvim alias to just go into directory
 alias vim="nvim ."
 
-
+# Pomodoro aliases
 alias wo="pomodoro 'work'"
 alias br="pomodoro 'break'"
 alias ptest="pomodoro 'test'"
