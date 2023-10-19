@@ -142,6 +142,7 @@ cf() {
 declare -A pomo_options
 pomo_options["work"]="45"
 pomo_options["break"]="15"
+pomo_options["long-break"]="20"
 pomo_options["test"]="5"
 
 pomodoro () {
@@ -202,9 +203,13 @@ alias serve="npm run serve"
 # nvim alias to just go into directory
 alias vim="nvim ."
 
+# launch macchina
+alias sinfo="macchina"
+
 # Pomodoro aliases
 alias wo="pomodoro 'work'"
 alias br="pomodoro 'break'"
+alias brl="pomodoro 'long-break'"
 alias ptest="pomodoro 'test'"
 
 autoload -U colors && colors
