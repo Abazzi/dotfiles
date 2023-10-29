@@ -1,10 +1,15 @@
 # If you come from bash you might have to change your $PATH.
-export PATH="$PATH:$HOME/bin:/usr/local/bin:"
+export PATH="$PATH:$HOME/bin:/usr/local/bin:$HOME/.local/bin"
 export PATH="$PATH:/usr/local/go/bin"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export EXERCISM="$HOME/.bin"
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+# ~/.tmux/plugins
+export PATH=$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
+# ~/.config/tmux/plugins
+export PATH=$HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
+export T_SESSION_USE_GIT_ROOT="true"
 
 
 # Set name of the theme to load --- if set to "random", it will
@@ -18,7 +23,6 @@ export UPDATE_ZSH_DAYS=14
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 DISABLE_MAGIC_FUNCTIONS=true
-
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -182,6 +186,7 @@ alias td="tmux detach"
 alias tl="tmux ls"
 alias ta="tmux a"
 alias tkserver="tmux kill-server"
+alias tn="tmux new -s (pwd | sed 's/.*\///g')"
 alias tnc="tmux new -s c"
 alias tnj="tmux new -s javascript"
 alias tac="tmux a -t c"
@@ -197,8 +202,8 @@ alias ls="ls --color=auto --group-directories-first --time-style=iso --quoting-s
 # cd into nvim config folder on Windows
 alias nvimcw="cd $HOME/AppData/Local/nvim"
 
-# cd into code directory
-alias code="cd $HOME/code"
+# source zsh config file
+alias szh="source ~/.zshrc"
 
 # run npm run watch
 alias watch="npm run watch"
@@ -209,6 +214,7 @@ alias serve="npm run serve"
 # nvim alias to just go into directory
 alias vim="nvim ."
 
+alias tn="tmux new -s (pwd | sed 's/.*\///g')"
 
 alias wo="pomodoro 'work'"
 alias br="pomodoro 'break'"
@@ -219,3 +225,5 @@ PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magent
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+eval "$(zoxide init zsh)"
