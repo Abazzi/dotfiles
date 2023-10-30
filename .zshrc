@@ -185,12 +185,8 @@ alias tk="tmux kill-session"
 alias td="tmux detach"
 alias tl="tmux ls"
 alias ta="tmux a"
-<<<<<<< HEAD
 alias tks="tmux kill-server"
-=======
 alias tkserver="tmux kill-server"
-alias tn="tmux new -s (pwd | sed 's/.*\///g')"
->>>>>>> ef8460395edf8afad1044fd9eec9e250b2128aa7
 alias tnc="tmux new -s c"
 alias tnj="tmux new -s javascript"
 alias tac="tmux a -t c"
