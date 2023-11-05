@@ -16,7 +16,13 @@ export T_SESSION_USE_GIT_ROOT="true"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="cloud"
+ZSH_THEME="steeef"
+
+## Git Theme Prompts
+ZSH_THEME_GIT_PROMPT_PREFIX="("
+ZSH_THEME_GIT_PROMPT_SUFFIX=")"
+ZSH_THEME_GIT_PROMPT_DIRTY=" ✗"
+ZSH_THEME_GIT_PROMPT_CLEAN=" ✔"
 
 # Uncomment the following line to change how often to auto-update (in days).
 export UPDATE_ZSH_DAYS=14
@@ -112,8 +118,6 @@ bindkey '^e' edit-command-line
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 
-## Code Directory Generator Script
-alias cdg="~/dotfiles/./codeDirectoryGenerator.sh"
 
 ## fuzzy finder into directory
 ff() {
@@ -122,10 +126,10 @@ ff() {
  cd "$dir"
 }
 
-# cf - fuzzy cd from anywhere
-# ex: cf word1 word2 ... (even part of a file name)
+# fcd- fuzzy cd from anywhere
+# ex: fcd word1 word2 ... (even part of a file name)
 # zsh autoload function
-cf() {
+fcd() {
   local file
 
   file="$(locate -Ai -0 $@ | grep -z -vE '~$' | fzf --read0 -0 -1)"
@@ -223,8 +227,20 @@ alias br="pomodoro 'break'"
 alias brl="pomodoro 'long-break'"
 alias ptest="pomodoro 'test'"
 
+## Code Directory Generator Script
+alias cdg="~/dotfiles/./codeDirectoryGenerator.sh"
+
+## Prompt colours
 autoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+RPROMPT='${vcs_info_msg_0_}'
+# PROMPT='${vcs_info_msg_0_}%# '
+zstyle ':vcs_info:git:*' formats '%b'
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
