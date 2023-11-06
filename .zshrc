@@ -148,10 +148,16 @@ fcd() {
 ## Pomodoro Timer ###
 # Requires https://github.com/caarlos0/timer and lolcat
 declare -A pomo_options
-pomo_options["work"]="45"
 pomo_options["break"]="15"
 pomo_options["long-break"]="20"
-pomo_options["test"]="5"
+pomo_options["work"]="45"
+pomo_options["long-work"]="90"
+pomo_options["ten"]="10"
+pomo_options["twenty"]="20"
+pomo_options["thirty"]="30"
+pomo_options["fourty"]="40"
+pomo_options["fifty"]="50"
+pomo_options["hour"]="60"
 
 pomodoro () {
   if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
@@ -223,14 +229,17 @@ alias sinfo="macchina"
 
 # Pomodoro aliases
 alias wo="pomodoro 'work'"
+alias wol="pomodoro 'long-work'"
 alias br="pomodoro 'break'"
 alias brl="pomodoro 'long-break'"
 alias ptest="pomodoro 'test'"
+alias p10="pomodoro 'ten'"
+alias p20="pomodoro 'twenty'"
+alias p30="pomodoro 'thirty'"
+alias p40="pomodoro 'fourty'"
+alias p50="pomodoro 'fifty'"
+alias p60="pomodoro 'hour'"
 
-## Code Directory Generator Script
-alias cdg="~/dotfiles/./codeDirectoryGenerator.sh"
-
-## Prompt colours
 autoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
