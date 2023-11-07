@@ -206,6 +206,9 @@ alias tkj="tmux kill-sess -t javascript"
 
 ### Aliases for everything else ###
 
+## Run Repo Gen Script
+alias wdg="~/dotfiles/./webDirGen.sh"
+
 # better ls
 alias ls="ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal"
 
