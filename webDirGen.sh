@@ -10,9 +10,7 @@ cp ~/dotfiles/.gitignore .gitignore
 cp ~/dotfiles/.prettierrc .prettierrc
 
 ## Create starter files
-touch index.html
-touch main.js
-touch styles.css
+touch index.html main.js styles.css
 
 ## initalize git repo and install eslint and prettier
 git init
