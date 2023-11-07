@@ -16,7 +16,13 @@ export T_SESSION_USE_GIT_ROOT="true"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="cloud"
+ZSH_THEME="steeef"
+
+## Git Theme Prompts
+ZSH_THEME_GIT_PROMPT_PREFIX="("
+ZSH_THEME_GIT_PROMPT_SUFFIX=")"
+ZSH_THEME_GIT_PROMPT_DIRTY=" ✗"
+ZSH_THEME_GIT_PROMPT_CLEAN=" ✔"
 
 # Uncomment the following line to change how often to auto-update (in days).
 export UPDATE_ZSH_DAYS=14
@@ -112,8 +118,6 @@ bindkey '^e' edit-command-line
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 
-## Code Directory Generator Script
-alias cdg="~/dotfiles/./codeDirectoryGenerator.sh"
 
 ## fuzzy finder into directory
 fcd() {
@@ -122,10 +126,10 @@ fcd() {
  cd "$dir"
 }
 
-# cf - fuzzy cd from anywhere
-# ex: cf word1 word2 ... (even part of a file name)
+# fcd- fuzzy cd from anywhere
+# ex: fcd word1 word2 ... (even part of a file name)
 # zsh autoload function
-cf() {
+fcd() {
   local file
 
   file="$(locate -Ai -0 $@ | grep -z -vE '~$' | fzf --read0 -0 -1)"
@@ -144,10 +148,16 @@ cf() {
 ## Pomodoro Timer ###
 # Requires https://github.com/caarlos0/timer and lolcat
 declare -A pomo_options
-pomo_options["work"]="45"
 pomo_options["break"]="15"
 pomo_options["long-break"]="20"
-pomo_options["test"]="5"
+pomo_options["work"]="45"
+pomo_options["long-work"]="90"
+pomo_options["ten"]="10"
+pomo_options["twenty"]="20"
+pomo_options["thirty"]="30"
+pomo_options["fourty"]="40"
+pomo_options["fifty"]="50"
+pomo_options["hour"]="60"
 
 pomodoro () {
   if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
@@ -196,6 +206,9 @@ alias tkj="tmux kill-sess -t javascript"
 
 ### Aliases for everything else ###
 
+## Run Repo Gen Script
+alias wdg="~/dotfiles/./webDirGen.sh"
+
 # better ls
 alias ls="ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal"
 
@@ -219,12 +232,27 @@ alias sinfo="macchina"
 
 # Pomodoro aliases
 alias wo="pomodoro 'work'"
+alias wol="pomodoro 'long-work'"
 alias br="pomodoro 'break'"
 alias brl="pomodoro 'long-break'"
 alias ptest="pomodoro 'test'"
+alias p10="pomodoro 'ten'"
+alias p20="pomodoro 'twenty'"
+alias p30="pomodoro 'thirty'"
+alias p40="pomodoro 'fourty'"
+alias p50="pomodoro 'fifty'"
+alias p60="pomodoro 'hour'"
 
 autoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+RPROMPT='${vcs_info_msg_0_}'
+# PROMPT='${vcs_info_msg_0_}%# '
+zstyle ':vcs_info:git:*' formats '%b'
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
