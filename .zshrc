@@ -230,6 +230,9 @@ alias vim="nvim ."
 # launch macchina
 alias sinfo="macchina"
 
+# launch ripasso-cursive
+alias rpc="ripasso-cursive"
+
 # Pomodoro aliases
 alias wo="pomodoro 'work'"
 alias wol="pomodoro 'long-work'"
