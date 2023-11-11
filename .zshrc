@@ -207,7 +207,7 @@ alias tkj="tmux kill-sess -t javascript"
 ### Aliases for everything else ###
 
 ## Run Repo Gen Script
-alias wdg="~/dotfiles/./webDirGen.sh"
+alias wdg="~/dotfiles/./webDirGen.sh "
 
 # better ls
 alias ls="ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal"
@@ -229,6 +229,9 @@ alias vim="nvim ."
 
 # launch macchina
 alias sinfo="macchina"
+
+# launch ripasso-cursive
+alias rpc="ripasso-cursive"
 
 # Pomodoro aliases
 alias wo="pomodoro 'work'"
