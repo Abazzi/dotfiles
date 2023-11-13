@@ -4,6 +4,7 @@ while getopts "b:w:" opt; do
   case $opt in
     w)
       i="$OPTARG"
+      echo "Generating Webpack Repo" | lolcat
       mkdir $i
 
       cd $i
@@ -25,6 +26,7 @@ while getopts "b:w:" opt; do
       ;;
     b)
       i="$OPTARG"
+      echo "Generating Bare Repo" | lolcat
       mkdir $i
 
       cd $i
@@ -41,7 +43,7 @@ while getopts "b:w:" opt; do
       git init
       npm init -y
       npm install -d eslint prettier eslint-config-prettier
-      echo "Webpack Directory Setup Finished" | lolcat
+      echo "Bare Repo Setup Finished" | lolcat
       ;;
     \?)
       echo "Invalid option: -$OPTARG" >&2
