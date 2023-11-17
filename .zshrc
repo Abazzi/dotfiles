@@ -41,12 +41,10 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  zsh-vi-mode
   zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
-
 
 # User configuration
 
@@ -54,6 +52,53 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
+#VI Mode
+# vi mode
+bindkey -v
+export KEYTIMEOUT=1
+
+# Use vim keys in tab complete menu:
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -v '^?' backward-delete-char
+
+# Change cursor shape for different vi modes.
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] ||
+     [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+  elif [[ ${KEYMAP} == main ]] ||
+       [[ ${KEYMAP} == viins ]] ||
+       [[ ${KEYMAP} = '' ]] ||
+       [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
+}
+zle -N zle-keymap-select
+zle-line-init() {
+    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+    echo -ne "\e[5 q"
+}
+zle -N zle-line-init
+echo -ne '\e[5 q' # Use beam shape cursor on startup.
+preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+
+# Use lf to switch directories and bind it to ctrl-o
+lfcd () { tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+    fi
+}
+bindkey -s '^o' 'lfcd\n'
+
+# Edit line in vim with ctrl-e:
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^e' edit-command-line
 
 # Preferred editor for local and remote sessions
  if [[ -n $SSH_CONNECTION ]]; then
@@ -153,8 +198,8 @@ alias tl="tmux ls"
 alias ta="tmux a"
 alias tks="tmux kill-server"
 alias tkserver="tmux kill-server"
-alias tnc="tmux new -s c"
-alias tnj="tmux new -s javascript"
+alias tnc="tmux new -s $HOME/repos/c"
+alias tnj="tmux new -s javascript $HOME/repos/javascript"
 alias tac="tmux a -t c"
 alias taj="tmux a -t javascript"
 alias tkc="tmux kill-sess -t c"
