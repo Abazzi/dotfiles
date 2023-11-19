@@ -12,7 +12,7 @@ while getopts "b:w:" opt; do
       ## Copy Favicon, gitignore and prettier config 
       cp ~/dotfiles/favicon.ico favicon.ico
       cp ~/dotfiles/.gitignore .gitignore
-      cp ~/dotfiles/.prettierrc .prettierrc
+      cp ~/dotfiles/.prettierrc.json .prettierrc.json
 
       ## Create starter files
       touch index.html main.ts styles.scss
@@ -34,7 +34,7 @@ while getopts "b:w:" opt; do
       ## Copy Favicon, gitignore and prettier config 
       cp ~/dotfiles/favicon.ico favicon.ico
       cp ~/dotfiles/.gitignore .gitignore
-      cp ~/dotfiles/.prettierrc .prettierrc
+      cp ~/dotfiles/.prettierrc.json .prettierrc.json
 
       ## Create starter files
       touch index.html main.ts styles.scss
