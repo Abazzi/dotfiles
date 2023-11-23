@@ -121,7 +121,7 @@ bindkey '^e' edit-command-line
 
 
 ## fuzzy finder into directory
-fcd() {
+ff() {
  local dir
  dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
  cd "$dir"
@@ -224,8 +224,11 @@ alias watch="npm run watch"
 # run npm run serve (webpack) 
 alias serve="npm run serve"
 
+# run http-server port 8080 with no cache
+alias srv="http-server -p 8080 -c1"
+
 # nvim alias to just go into directory
-alias vim="nvim ."
+alias nv="nvim"
 
 # launch macchina
 alias sinfo="macchina"
