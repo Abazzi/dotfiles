@@ -198,11 +198,9 @@ alias tl="tmux ls"
 alias ta="tmux a"
 alias tks="tmux kill-server"
 alias tkserver="tmux kill-server"
-alias tns="tmux new -s code-workspace"
-alias tac="tmux a -t c"
-alias taj="tmux a -t javascript"
-alias tkc="tmux kill-sess -t c"
-alias tkj="tmux kill-sess -t javascript"
+alias tns="tmux new -s codeSession"
+alias tas="tmux a -t codeSession"
+alias tks="tmux kill-sess -t codeSession"
 
 ### Aliases for everything else ###
 
@@ -228,7 +226,7 @@ alias serve="npm run serve"
 alias srv="http-server -p 8080 -c1"
 
 # nvim alias to just go into directory
-alias nv="nvim"
+alias nv="nvim ."
 
 # launch macchina
 alias sinfo="macchina"
