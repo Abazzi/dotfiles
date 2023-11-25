@@ -230,6 +230,9 @@ alias srv="http-server -p 8080 -c1"
 # nvim alias to just go into directory
 alias nv="nvim ."
 
+# cd into neovim config folder
+alias ns="cd $HOME/.config/nvim"
+
 # launch macchina
 alias sinfo="macchina"
 
