@@ -243,6 +243,9 @@ alias rpc="ripasso-cursive"
 # launch cht.sh script
 alias cht="~/dotfiles/scripts/tmux-cht/tmux-cht.sh "
 
+# launch passfzf.sh
+alias pf="~/dotfiles/scripts/passfzf.sh "
+
 # Pomodoro aliases
 alias wo="pomodoro 'work'"
 alias wol="pomodoro 'long-work'"
