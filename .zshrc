@@ -123,10 +123,11 @@ bindkey '^e' edit-command-line
 
 
 ## fuzzy finder into directory
-ff() {
+fd() {
  local dir
- dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
- cd "$dir"
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  cd "$dir"
 }
 
 # fcd- fuzzy cd from anywhere
