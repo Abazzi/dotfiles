@@ -21,7 +21,7 @@ while getopts "b:w:" opt; do
       #& typescript
       git init
       npm init -y
-      npm install -d eslint prettier eslint-config-prettier webpack webpack-cli sass sass-loader style-loader typescript ts-loader
+      npm install prettier eslint-config-prettier webpack webpack-cli sass sass-loader style-loader typescript ts-loader --save-dev
       npm init @eslint/config
       echo "Basic Directory Setup Finished" | lolcat
       ;;
@@ -43,7 +43,7 @@ while getopts "b:w:" opt; do
       ## initalize git repo and install eslint, prettier
       git init
       npm init -y
-      npm install -d eslint prettier eslint-config-prettier
+      npm install -d prettier eslint-config-prettier --save-dev
       npm init @eslint/config
       echo "Bare Repo Setup Finished" | lolcat
       ;;
