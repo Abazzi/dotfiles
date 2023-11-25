@@ -22,6 +22,7 @@ while getopts "b:w:" opt; do
       git init
       npm init -y
       npm install -d eslint prettier eslint-config-prettier webpack webpack-cli sass sass-loader style-loader typescript ts-loader
+      npm init @eslint/config
       echo "Basic Directory Setup Finished" | lolcat
       ;;
     b)
@@ -37,12 +38,13 @@ while getopts "b:w:" opt; do
       cp ~/dotfiles/.prettierrc.json .prettierrc.json
 
       ## Create starter files
-      touch index.html main.ts styles.scss
+      touch index.html main.js styles.css
 
       ## initalize git repo and install eslint, prettier
       git init
       npm init -y
       npm install -d eslint prettier eslint-config-prettier
+      npm init @eslint/config
       echo "Bare Repo Setup Finished" | lolcat
       ;;
     \?)

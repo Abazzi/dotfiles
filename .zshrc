@@ -3,6 +3,8 @@ export PATH="$PATH:$HOME/bin:/usr/local/bin:$HOME/.local/bin"
 export PATH="$PATH:/usr/local/go/bin"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
+# Exercism
 export EXERCISM="$HOME/.bin"
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 # ~/.tmux/plugins
@@ -205,7 +207,7 @@ alias tks="tmux kill-sess -t codeSession"
 ### Aliases for everything else ###
 
 ## Run Repo Gen Script
-alias rg="~/dotfiles/./repoGen.sh "
+alias rg="~/dotfiles/scripts/repoGen.sh "
 
 # better ls
 alias ls="ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal"
@@ -233,6 +235,9 @@ alias sinfo="macchina"
 
 # launch ripasso-cursive
 alias rpc="ripasso-cursive"
+
+# launch cht.sh script
+alias cht="~/dotfiles/scripts/tmux-cht/tmux-cht.sh "
 
 # Pomodoro aliases
 alias wo="pomodoro 'work'"
