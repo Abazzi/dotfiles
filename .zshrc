@@ -3,6 +3,8 @@ export PATH="$PATH:$HOME/bin:/usr/local/bin:$HOME/.local/bin"
 export PATH="$PATH:/usr/local/go/bin"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
+# Exercism
 export EXERCISM="$HOME/.bin"
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 # ~/.tmux/plugins
@@ -39,7 +41,10 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  git
+  zsh-autosuggestions
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -49,7 +54,6 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-
 #VI Mode
 # vi mode
 bindkey -v
@@ -98,7 +102,6 @@ bindkey -s '^o' 'lfcd\n'
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
-
 # Preferred editor for local and remote sessions
  if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='vim'
@@ -120,7 +123,7 @@ bindkey '^e' edit-command-line
 
 
 ## fuzzy finder into directory
-fcd() {
+ff() {
  local dir
  dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
  cd "$dir"
@@ -197,17 +200,14 @@ alias tl="tmux ls"
 alias ta="tmux a"
 alias tks="tmux kill-server"
 alias tkserver="tmux kill-server"
-alias tnc="tmux new -s c"
-alias tnj="tmux new -s javascript"
-alias tac="tmux a -t c"
-alias taj="tmux a -t javascript"
-alias tkc="tmux kill-sess -t c"
-alias tkj="tmux kill-sess -t javascript"
+alias tns="tmux new -s codeSession"
+alias tas="tmux a -t codeSession"
+alias tks="tmux kill-sess -t codeSession"
 
 ### Aliases for everything else ###
 
 ## Run Repo Gen Script
-alias wdg="~/dotfiles/./webDirGen.sh "
+alias rg="~/dotfiles/scripts/repoGen.sh "
 
 # better ls
 alias ls="ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal"
@@ -224,14 +224,23 @@ alias watch="npm run watch"
 # run npm run serve (webpack) 
 alias serve="npm run serve"
 
+# run http-server port 8080 with no cache
+alias srv="http-server -p 8080 -c1"
+
 # nvim alias to just go into directory
-alias vim="nvim ."
+alias nv="nvim ."
+
+# cd into neovim config folder
+alias ns="cd $HOME/.config/nvim"
 
 # launch macchina
 alias sinfo="macchina"
 
 # launch ripasso-cursive
 alias rpc="ripasso-cursive"
+
+# launch cht.sh script
+alias cht="~/dotfiles/scripts/tmux-cht/tmux-cht.sh "
 
 # Pomodoro aliases
 alias wo="pomodoro 'work'"
