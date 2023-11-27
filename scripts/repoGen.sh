@@ -1,18 +1,18 @@
 #!/bin/bash
 
-while getopts "b:w:" opt; do
+while getopts "b:w:wst:" opt; do
   case $opt in
-    w)
+    wst)
       i="$OPTARG"
-      echo "Generating Webpack Repo" | lolcat
+      echo "Generating Webpack Repo With Sass & TypeScript" | lolcat
       mkdir $i
 
       cd $i
 
       ## Copy Favicon, gitignore and prettier config 
-      cp ~/dotfiles/favicon.ico favicon.ico
-      cp ~/dotfiles/.gitignore .gitignore
-      cp ~/dotfiles/.prettierrc.json .prettierrc.json
+      cp ~/dotfiles/assets/favicon.ico favicon.ico
+      cp ~/dotfiles/gitconfig/.gitignore .gitignore
+      cp ~/dotfiles/otherConfigs/.prettierrc.json .prettierrc.json
 
       ## Create starter files
       touch index.html main.ts styles.scss
@@ -25,6 +25,28 @@ while getopts "b:w:" opt; do
       npm init @eslint/config
       echo "Basic Directory Setup Finished" | lolcat
       ;;
+    w)
+      i="$OPTARG"
+      echo "Generating Webpack Repo" | lolcat
+      mkdir $i
+
+      cd $i
+
+      ## Copy Favicon, gitignore and prettier config 
+      cp ~/dotfiles/assets/favicon.ico favicon.ico
+      cp ~/dotfiles/gitconfig/.gitignore .gitignore
+      cp ~/dotfiles/otherConfigs/.prettierrc.json .prettierrc.json
+
+      ## Create starter files
+      touch index.html main.js styles.css
+
+      ## initalize git repo and install eslint, prettier, webpack and babel
+      git init
+      npm init -y
+      npm install prettier eslint-config-prettier webpack webpack-cli webpack-dev-server babel-loader @babel/core @babel/preset-env --save-dev
+      npm init @eslint/config
+      echo "Basic Directory Setup Finished" | lolcat
+      ;;
     b)
       i="$OPTARG"
       echo "Generating Bare Repo" | lolcat
@@ -33,9 +55,9 @@ while getopts "b:w:" opt; do
       cd $i
 
       ## Copy Favicon, gitignore and prettier config 
-      cp ~/dotfiles/favicon.ico favicon.ico
-      cp ~/dotfiles/.gitignore .gitignore
-      cp ~/dotfiles/.prettierrc.json .prettierrc.json
+      cp ~/dotfiles/assets/favicon.ico favicon.ico
+      cp ~/dotfiles/gitconfig/.gitignore .gitignore
+      cp ~/dotfiles/otherConfigs/.prettierrc.json .prettierrc.json
 
       ## Create starter files
       touch index.html main.js styles.css
