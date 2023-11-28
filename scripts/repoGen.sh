@@ -23,7 +23,7 @@ while getopts "b:w:wst:" opt; do
       npm init -y
       npm install prettier eslint-config-prettier webpack webpack-cli sass sass-loader style-loader typescript ts-loader --save-dev
       npm init @eslint/config
-      echo "Basic Directory Setup Finished" | lolcat
+      echo "Webpack Repo with Sass & Typescript Setup Finished" | lolcat
       ;;
     w)
       i="$OPTARG"
@@ -45,7 +45,7 @@ while getopts "b:w:wst:" opt; do
       npm init -y
       npm install prettier eslint-config-prettier webpack webpack-cli webpack-dev-server babel-loader @babel/core @babel/preset-env --save-dev
       npm init @eslint/config
-      echo "Basic Directory Setup Finished" | lolcat
+      echo "Webpack Directory with Babel Setup Finished" | lolcat
       ;;
     b)
       i="$OPTARG"
