@@ -27,7 +27,7 @@ while getopts "b:w:wst:" opt; do
       ;;
     w)
       i="$OPTARG"
-      echo "Generating Webpack Repo" | lolcat
+      echo "Generating Webpack with Babel Repo" | lolcat
       mkdir $i
 
       cd $i
@@ -45,7 +45,7 @@ while getopts "b:w:wst:" opt; do
       npm init -y
       npm install prettier eslint-config-prettier webpack webpack-cli webpack-dev-server babel-loader @babel/core @babel/preset-env --save-dev
       npm init @eslint/config
-      echo "Webpack Directory with Babel Setup Finished" | lolcat
+      echo "Webpack Repo with Babel Setup Finished" | lolcat
       ;;
     b)
       i="$OPTARG"
