@@ -123,10 +123,11 @@ bindkey '^e' edit-command-line
 
 
 ## fuzzy finder into directory
-ff() {
+fd() {
  local dir
- dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
- cd "$dir"
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  cd "$dir"
 }
 
 # fcd- fuzzy cd from anywhere
@@ -186,6 +187,7 @@ alias doom2="gzdoom -file DOOM2.WAD GAMEPLAY/SmoothDoom.pk3"
 alias gclone="git clone"
 alias gamend="git commit --amend"
 alias gcm="git commit -m"
+alias gbd="git branch -d "
 alias gm="git merge"
 alias ga="git add ."
 alias gpo="git push origin"
@@ -241,6 +243,9 @@ alias rpc="ripasso-cursive"
 
 # launch cht.sh script
 alias cht="~/dotfiles/scripts/tmux-cht/tmux-cht.sh "
+
+# launch passfzf.sh
+alias pf="~/dotfiles/scripts/passfzf.sh "
 
 # Pomodoro aliases
 alias wo="pomodoro 'work'"
