@@ -38,7 +38,7 @@ while getopts "b:w:wst:" opt; do
       cp ~/dotfiles/otherConfigs/.prettierrc.json .prettierrc.json
 
       ## Create starter files
-      touch index.html main.js styles.css
+      touch index.html index.js styles.css
 
       ## initalize git repo and install eslint, prettier, webpack and babel
       git init
@@ -60,7 +60,7 @@ while getopts "b:w:wst:" opt; do
       cp ~/dotfiles/otherConfigs/.prettierrc.json .prettierrc.json
 
       ## Create starter files
-      touch index.html main.js styles.css
+      touch index.html index.js styles.css
 
       ## initalize git repo and install eslint, prettier
       git init
