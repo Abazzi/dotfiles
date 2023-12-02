@@ -1,8 +1,8 @@
 #!/bin/bash
 
-while getopts "b:w:wst:" opt; do
+while getopts "b:w:t:" opt; do
   case $opt in
-    wst)
+    t)
       i="$OPTARG"
       echo "Generating Webpack Repo With Sass & TypeScript" | lolcat
       mkdir $i
@@ -21,9 +21,9 @@ while getopts "b:w:wst:" opt; do
       #& typescript
       git init
       npm init -y
-      npm install prettier eslint-config-prettier webpack webpack-cli sass sass-loader style-loader typescript ts-loader --save-dev
+      npm install prettier eslint-config-prettier webpack webpack-cli sass sass-loader style-loader typescript ts-loader webpack-dev-server --save-dev
       npm init @eslint/config
-      echo "Basic Directory Setup Finished" | lolcat
+      echo "Project Setup Finished" | lolcat
       ;;
     w)
       i="$OPTARG"
@@ -45,7 +45,7 @@ while getopts "b:w:wst:" opt; do
       npm init -y
       npm install prettier eslint-config-prettier webpack webpack-cli webpack-dev-server babel-loader @babel/core @babel/preset-env --save-dev
       npm init @eslint/config
-      echo "Basic Directory Setup Finished" | lolcat
+      echo "Project Setup Finished" | lolcat
       ;;
     b)
       i="$OPTARG"
@@ -67,7 +67,7 @@ while getopts "b:w:wst:" opt; do
       npm init -y
       npm install -d prettier eslint-config-prettier --save-dev
       npm init @eslint/config
-      echo "Bare Repo Setup Finished" | lolcat
+      echo "Project Setup Finished" | lolcat
       ;;
     \?)
       echo "Invalid option: -$OPTARG" >&2

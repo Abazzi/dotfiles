@@ -187,7 +187,7 @@ alias doom2="gzdoom -file DOOM2.WAD GAMEPLAY/SmoothDoom.pk3"
 alias gclone="git clone"
 alias gamend="git commit --amend"
 alias gcm="git commit -m"
-alias gbd="git branch -d "
+alias gbd="git branch -d"
 alias gm="git merge"
 alias ga="git add ."
 alias gpo="git push origin"
@@ -224,7 +224,10 @@ alias szh="source ~/.zshrc"
 alias watch="npm run watch"
 
 # run npm run serve (webpack) 
-alias serve="npm run serve"
+alias wServe="npm run serve"
+
+# run npm run dev (vite) 
+alias vServe="npm run dev"
 
 # run http-server port 8080 with no cache
 alias srv="http-server -p 8080 -c1"
