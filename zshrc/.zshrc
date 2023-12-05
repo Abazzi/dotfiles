@@ -196,15 +196,14 @@ alias gp="git pull"
 alias glo="git log --oneline"
 
 ### Aliases for tmux ###
-alias tk="tmux kill-session"
 alias td="tmux detach"
 alias tl="tmux ls"
 alias ta="tmux a"
 alias tks="tmux kill-server"
 alias tkserver="tmux kill-server"
-alias tns="tmux new -s codeSession"
-alias tas="tmux a -t codeSession"
-alias tks="tmux kill-sess -t codeSession"
+alias tn="tmux new -s "
+alias ta="tmux a -t "
+alias tk="tmux kill-sess -t "
 
 ### Aliases for everything else ###
 
