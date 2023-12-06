@@ -15,7 +15,7 @@ while getopts "b:w:t:" opt; do
       cp ~/dotfiles/otherConfigs/.prettierrc.json .prettierrc.json
 
       ## Create starter files
-      touch index.html main.ts styles.scss
+      touch index.html main.ts styles.scss tsconfig.json
 
       ## initalize git repo and install eslint, prettier, webpack with sass
       #& typescript
