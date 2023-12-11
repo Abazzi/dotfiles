@@ -208,7 +208,7 @@ alias tk="tmux kill-sess -t "
 ### Aliases for everything else ###
 
 ## Run Repo Gen Script
-alias rg="~/dotfiles/scripts/repoGen.sh "
+alias rg="~/dotfiles/scripts/repoGen/repoGen.sh "
 
 # better ls
 alias ls="ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal"
