@@ -196,20 +196,19 @@ alias gp="git pull"
 alias glo="git log --oneline"
 
 ### Aliases for tmux ###
-alias tk="tmux kill-session"
 alias td="tmux detach"
 alias tl="tmux ls"
 alias ta="tmux a"
 alias tks="tmux kill-server"
 alias tkserver="tmux kill-server"
-alias tns="tmux new -s codeSession"
-alias tas="tmux a -t codeSession"
-alias tks="tmux kill-sess -t codeSession"
+alias tn="tmux new -s "
+alias ta="tmux a -t "
+alias tk="tmux kill-sess -t "
 
 ### Aliases for everything else ###
 
 ## Run Repo Gen Script
-alias rg="~/dotfiles/scripts/repoGen.sh "
+alias rg="~/dotfiles/scripts/repoGen/repoGen.sh "
 
 # better ls
 alias ls="ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal"
@@ -277,4 +276,5 @@ zstyle ':vcs_info:git:*' formats '%b'
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
+# Init zoxide & tmuxifier
 eval "$(zoxide init zsh)"

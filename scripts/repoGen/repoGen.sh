@@ -12,14 +12,15 @@ while getopts "b:w:t:" opt; do
       ## Copy Favicon, gitignore and prettier config 
       cp ~/dotfiles/assets/favicon.ico favicon.ico
       cp ~/dotfiles/gitconfig/.gitignore .gitignore
-      cp ~/dotfiles/otherConfigs/.prettierrc.json .prettierrc.json
+      cp ~/dotfiles/scripts/repoGen/.prettierrc.json .prettierrc.json
+      cp ~/dotfiles/scripts/repoGen/tsconfig.json tsconfig.json
+      cp ~/dotfiles/scripts/repoGen/webpack.config.js webpack.config.js 
 
       ## Create starter files
-      touch index.html main.ts styles.scss
+      touch index.html main.ts styles.scss 
 
       ## initalize git repo and install eslint, prettier, webpack with sass
       #& typescript
-      git init
       npm init -y
       npm install prettier eslint-config-prettier webpack webpack-cli sass sass-loader style-loader typescript ts-loader webpack-dev-server --save-dev
       npm init @eslint/config
@@ -35,13 +36,13 @@ while getopts "b:w:t:" opt; do
       ## Copy Favicon, gitignore and prettier config 
       cp ~/dotfiles/assets/favicon.ico favicon.ico
       cp ~/dotfiles/gitconfig/.gitignore .gitignore
-      cp ~/dotfiles/otherConfigs/.prettierrc.json .prettierrc.json
+      cp ~/dotfiles/scripts/repoGen/.prettierrc.json .prettierrc.json
+      cp ~/dotfiles/scripts/repoGen/webpack.config.js webpack.config.js 
 
       ## Create starter files
       touch index.html index.js styles.css
 
       ## initalize git repo and install eslint, prettier, webpack and babel
-      git init
       npm init -y
       npm install prettier eslint-config-prettier webpack webpack-cli webpack-dev-server babel-loader @babel/core @babel/preset-env --save-dev
       npm init @eslint/config
@@ -57,13 +58,12 @@ while getopts "b:w:t:" opt; do
       ## Copy Favicon, gitignore and prettier config 
       cp ~/dotfiles/assets/favicon.ico favicon.ico
       cp ~/dotfiles/gitconfig/.gitignore .gitignore
-      cp ~/dotfiles/otherConfigs/.prettierrc.json .prettierrc.json
+      cp ~/dotfiles/scripts/repoGen/.prettierrc.json .prettierrc.json
 
       ## Create starter files
       touch index.html index.js styles.css
 
       ## initalize git repo and install eslint, prettier
-      git init
       npm init -y
       npm install -d prettier eslint-config-prettier --save-dev
       npm init @eslint/config
