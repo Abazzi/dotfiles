@@ -1,9 +1,9 @@
 const path = require('path');
-const common = require('../withBabel/webpack.commonBabel');
-const merge = require('webpack-merge');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const common = require('./webpack.common');
+const { merge } = require('webpack-merge');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = merge(common, {
@@ -14,8 +14,7 @@ module.exports = merge(common, {
   },
   optimization: {
     minimizer: [
-      new OptimizeCssAssetsPlugin(),
-      new CssMinimizerPlugin(),
+      new CssMinimizerWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: './src/template.html',
         minify: {

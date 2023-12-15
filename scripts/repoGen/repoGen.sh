@@ -21,7 +21,7 @@ while getopts "b:w:t:" opt; do
       ## Create starter files
       mkdir src
       cd src
-      touch index.html main.ts styles.scss 
+      touch template.html index.ts styles.scss 
       cd ..
 
       ## initalize git repo and install eslint, prettier, webpack with sass
@@ -54,7 +54,7 @@ while getopts "b:w:t:" opt; do
       ## Create starter files
       mkdir src
       cd src
-      touch index.html index.js styles.scss
+      touch template.html index.js styles.scss
       cd ..
 
       ## initalize git repo and install eslint, prettier, webpack and babel
