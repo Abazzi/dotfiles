@@ -249,6 +249,9 @@ alias cht="~/dotfiles/scripts/tmux-cht/tmux-cht.sh "
 # launch passfzf.sh
 alias pf="~/dotfiles/scripts/passfzf.sh "
 
+# fd() into repos directory
+alias fdr="fd ~/repos"
+
 # Pomodoro aliases
 alias wo="pomodoro 'work'"
 alias wol="pomodoro 'long-work'"
