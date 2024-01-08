@@ -1,19 +1,5 @@
-### Aliases for running DOOM from terminal ###
-alias wads="cd $HOME/WADS"
-alias doom="gzdoom -file DOOM.WAD GAMEPLAY/SmoothDoom.pk3"
-alias doom2="gzdoom -file DOOM2.WAD GAMEPLAY/SmoothDoom.pk3"
-
-### Aliases for git (when not using fugitive) ###
-alias gclone="git clone"
-alias gamend="git commit --amend"
-alias gcm="git commit -m"
-alias gbd="git branch -d"
-alias gm="git merge"
-alias ga="git add ."
-alias gpo="git push origin"
-alias gc="git checkout"
-alias gp="git pull"
-alias glo="git log --oneline"
+### Aliases for entering WADS directory ###
+alias wads="cd $HOME/Documents/WADS"
 
 ### Aliases for tmux ###
 alias td="tmux detach"

@@ -104,3 +104,8 @@ lfcd () { tmp="$(mktemp)"
     fi
 }
 bindkey -s '^o' 'lfcd\n'
+
+timezsh () {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+}

@@ -10,6 +10,9 @@
 	logo = log --pretty=tformat:'%C(auto,red)%m %C(auto,yellow)%h%C(auto,magenta) %G? %C(auto,blue)%>(12,trunc)%ad %C(auto,green)%<(15,trunc)%aN%C(auto,reset)%s%C(auto,red) %gD %D' --date=short
 	adog = log --all --decorate --oneline --graph
 	dog = log --decorate --oneline --graph
+  amend = commit --amend
+  cm = commit -m 
+  c = checkout 
 [merge]
 	tool = nvim
 	conflictstyle = diff3

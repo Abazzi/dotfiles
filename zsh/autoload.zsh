@@ -7,6 +7,4 @@ RPROMPT='${vcs_info_msg_0_}'
 zstyle ':vcs_info:git:*' formats '%b'
 
 
-# Init zoxide & tmuxifier
-eval "$(zoxide init zsh)"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
