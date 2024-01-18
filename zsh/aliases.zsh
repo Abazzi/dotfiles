@@ -58,6 +58,9 @@ alias pf="~/dotfiles/scripts/passfzf.sh "
 # fd() into repos directory
 alias fdr="fd ~/repos"
 
+# alias to fd() into web_dev directory in ~/repos
+alias webdr="fd ~/repos/web_dev"
+
 # Pomodoro aliases
 alias wo="pomodoro 'work'"
 alias wol="pomodoro 'long-work'"
