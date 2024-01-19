@@ -1,31 +1,34 @@
+// webpack.common.js
 const path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: {
-    main: './src/ts/index.ts',
-  },
+  entry: path.resolve(__dirname, './src/index.ts'),
   module: {
     rules: [
-      {
-        test: /\.html$/,
-        use: ['html-loader'],
-      },
-      {
-        test: /\.(svg|png|jpg|gif)$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: '[name].[hash].[ext]',
-            outputPath: 'imgs',
-          },
-        },
-      },
       {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.s[ac]ss$/i,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
     ],
   },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
+  output: {
+    filename: 'bundle.[hash].js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, './src/templates/index.html'),
+    }),
+  ],
 };

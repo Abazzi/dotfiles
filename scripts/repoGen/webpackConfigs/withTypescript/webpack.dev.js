@@ -1,29 +1,13 @@
+// webpack.dev.js
+const webpackCommon = require('./webpack.common');
 const path = require('path');
-const common = require('./webpack.commonTs');
-const merge = require('webpack-merge');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = merge(common, {
+module.exports = {
+  ...webpackCommon,
+  devtool: 'inline-source-map',
   mode: 'development',
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    port: 3000,
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/template.html',
-    }),
-  ],
-  module: {
-    rules: [
-      {
-        test: /\.scss$/,
-        use: [
-          'style-loader', //3. Inject styles into DOM
-          'css-loader', //2. Turns css into commonjs
-          'sass-loader', //1. Turns sass into css
-        ],
-      },
-    ],
-  },
-});
+};
