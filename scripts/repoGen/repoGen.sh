@@ -21,7 +21,11 @@ while getopts "b:w:t:" opt; do
       ## Create starter files
       mkdir src
       cd src
-      touch template.html index.ts styles.scss 
+      mkdir templates
+      cd templates 
+      touch index.html
+      cd ../
+      touch index.ts styles.scss 
       cd ..
 
       ## initalize git repo and install eslint, prettier, webpack with sass
@@ -30,7 +34,7 @@ while getopts "b:w:t:" opt; do
       npm install prettier eslint-config-prettier  \
         sass sass-loader style-loader css-loader css-minimizer-webpack-plugin\
         html-webpack-plugin\
-        typescript ts-loader webpack-dev-server webpack-merge webpack webpack-cli\
+        typescript ts-loader webpack-dev-server webpack webpack-cli\
         file-loader --save-dev
       npm install --save clean-webpack-plugin
       npm init @eslint/config
