@@ -13,6 +13,8 @@
   amend = commit --amend
   cm = commit -m 
   c = checkout 
+  b = branch -a
+  bd = branch -d
 [merge]
 	tool = nvim
 	conflictstyle = diff3
