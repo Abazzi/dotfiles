@@ -13,6 +13,7 @@
   amend = commit --amend
   cm = commit -m 
   c = checkout 
+  cb = checkout -b
   b = branch -a
   bd = branch -d
 [merge]
