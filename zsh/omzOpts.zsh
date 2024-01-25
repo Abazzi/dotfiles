@@ -14,7 +14,6 @@ ZSH_THEME_GIT_PROMPT_CLEAN=" ✔"
 export UPDATE_ZSH_DAYS=14
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-DISABLE_MAGIC_FUNCTIONS=true
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -30,4 +29,3 @@ plugins=(
   zsh-nvm
 )
 
-source ~/.oh-my-zsh/oh-my-zsh.sh
