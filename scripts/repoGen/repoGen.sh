@@ -12,7 +12,8 @@ while getopts "b:w:t:" opt; do
       ## Copy Favicon, gitignore and prettier config 
       cp ~/dotfiles/assets/favicon.ico favicon.ico
       cp ~/dotfiles/gitconfig/.gitignore .gitignore
-      cp ~/dotfiles/scripts/repoGen/.prettierrc.json .prettierrc.json
+      cp ~/dotfiles/scripts/repoGen/.prettierrc.toml .prettierrc.toml
+      cp ~/dotfiles/scripts/repoGen/.eslintrc.json .eslintrc.json 
       cp ~/dotfiles/scripts/repoGen/tsconfig.json tsconfig.json
       cp ~/dotfiles/scripts/repoGen/webpackConfigs/withTypescript/webpack.production.js webpack.production.js 
       cp ~/dotfiles/scripts/repoGen/webpackConfigs/withTypescript/webpack.dev.js webpack.dev.js 
@@ -35,7 +36,9 @@ while getopts "b:w:t:" opt; do
         sass sass-loader style-loader css-loader css-minimizer-webpack-plugin\
         html-webpack-plugin\
         typescript ts-loader webpack-dev-server webpack webpack-cli\
-        file-loader --save-dev
+        file-loader\
+        @typescript-eslint/eslint-plugin @typescript-eslint/parser \
+        --save-dev
       npm install --save clean-webpack-plugin
       npm init @eslint/config
       echo "Project Setup Finished" | lolcat
