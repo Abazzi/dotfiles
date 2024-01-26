@@ -1,10 +1,10 @@
 ﻿#Requires AutoHotkey v2.0
 
-^e::{
++e::{
 Send "{RWin down}^{Right down}{Right up}{RWin up}"
 }
 
-^q::{
++q::{
 	Send "{RWin down}^{Left down}{Left up}{RWin up}"
 }
 
