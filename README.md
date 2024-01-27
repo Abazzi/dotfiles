@@ -29,3 +29,5 @@ I'm going to keep my dotfiles for these programs
 # Attriutes
 
 Wizard Hat Icon from [Freepik](https://www.freepik.com/)
+
+Favicon from [FlatIcon: Ranksol Graphics](https://www.flaticon.com/authors/ranksol-graphics)
