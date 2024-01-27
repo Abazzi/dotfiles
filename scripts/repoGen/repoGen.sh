@@ -40,7 +40,6 @@ while getopts "b:w:t:" opt; do
         @typescript-eslint/eslint-plugin @typescript-eslint/parser \
         --save-dev
       npm install --save clean-webpack-plugin
-      npm init @eslint/config
       echo "Project Setup Finished" | lolcat
       ;;
     w)
