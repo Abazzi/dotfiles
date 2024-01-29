@@ -51,6 +51,8 @@ while getopts "b:w:t:d" opt; do
         eslint-config-prettier eslint-plugin-prettier\
         --save-dev
       npm install --save clean-webpack-plugin
+      sed -i '7s/$/,/' package.json
+      sed -i '7a/ "start":"webpack-dev-server --config webpack.dev.js"'
       echo "$i Repo Generated" | lolcat
       ;;
     b)
@@ -128,6 +130,8 @@ while getopts "b:w:t:d" opt; do
         eslint-config-prettier eslint-plugin-prettier\
         --save-dev
       npm install --save clean-webpack-plugin
+      sed -i '7s/$/,/' package.json
+      sed -i '7a "start":"webpack-dev-server --config webpack.dev.js"' package.json
       echo "$i Setup Finished"
       ;;
   esac
