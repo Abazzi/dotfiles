@@ -37,7 +37,7 @@ while getopts "b:w:t:d" opt; do
       cd ../
       cd ts
       touch index.ts styles.scss 
-      cd ..
+      cd ../../
 
       ## initalize git repo and install eslint, prettier, webpack with sass
       #& typescript
@@ -113,7 +113,7 @@ while getopts "b:w:t:d" opt; do
       cd ../
       cd css/
       touch styles.css 
-      cd ..
+      cd ../../
 
       ## initalize git repo and install eslint, prettier, webpack 
       #& typescript
