@@ -25,6 +25,7 @@ I'm going to keep my dotfiles for these programs
 - Helper Scripts
 - Auto Hot Key
 - HHKB Layout file + Reference Images
+- Webpack Configurations
 
 # Attriutes
 

@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: path.resolve(__dirname, './src/index.ts'),
+  entry: path.resolve(__dirname, './src/ts/index.ts'),
   module: {
     rules: [
       {
@@ -22,7 +22,7 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   output: {
-    filename: 'bundle.[hash].js',
+    filename: 'bundle.[fullhash].js',
     path: path.resolve(__dirname, 'dist'),
   },
   plugins: [

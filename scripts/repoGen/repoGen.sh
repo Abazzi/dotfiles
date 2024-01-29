@@ -37,7 +37,7 @@ while getopts "b:w:t:d" opt; do
       cd ../
       cd ts
       touch index.ts styles.scss 
-      cd ..
+      cd ../../
 
       ## initalize git repo and install eslint, prettier, webpack with sass
       #& typescript
@@ -48,8 +48,11 @@ while getopts "b:w:t:d" opt; do
         typescript ts-loader webpack-dev-server webpack webpack-cli\
         file-loader\
         @typescript-eslint/eslint-plugin @typescript-eslint/parser \
+        eslint-config-prettier eslint-plugin-prettier\
         --save-dev
       npm install --save clean-webpack-plugin
+      sed -i '7s/$/,/' package.json
+      sed -i '7a/ "start":"webpack-dev-server --config webpack.dev.js"'
       echo "$i Repo Generated" | lolcat
       ;;
     b)
@@ -86,7 +89,7 @@ while getopts "b:w:t:d" opt; do
       ;;
     t)
       i="$OPTARG"
-      echo "$repoGenTitle" | lolcat
+      echo "$repoGenTitle" 
       mkdir $i
 
       cd $i
@@ -113,7 +116,7 @@ while getopts "b:w:t:d" opt; do
       cd ../
       cd css/
       touch styles.css 
-      cd ..
+      cd ../../
 
       ## initalize git repo and install eslint, prettier, webpack 
       #& typescript
@@ -124,9 +127,12 @@ while getopts "b:w:t:d" opt; do
         typescript ts-loader webpack-dev-server webpack webpack-cli\
         file-loader\
         @typescript-eslint/eslint-plugin @typescript-eslint/parser \
+        eslint-config-prettier eslint-plugin-prettier\
         --save-dev
       npm install --save clean-webpack-plugin
-      echo "$i Repo Generated" | lolcat
+      sed -i '7s/$/,/' package.json
+      sed -i '7a "start":"webpack-dev-server --config webpack.dev.js"' package.json
+      echo "$i Setup Finished"
       ;;
   esac
 done

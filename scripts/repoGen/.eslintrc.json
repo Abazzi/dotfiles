@@ -13,12 +13,13 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
     "indent": ["warn", 2, { "SwitchCase": 1 }],
     "linebreak-style": ["error", "unix"],
     "quotes": ["warn", "single"],
     "semi": ["error", "always"],
+    "prettier/prettier": "error",
     "@typescript-eslint/consistent-type-definitions": ["error", "type"]
   }
 }

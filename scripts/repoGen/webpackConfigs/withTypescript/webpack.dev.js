@@ -7,7 +7,10 @@ module.exports = {
   devtool: 'inline-source-map',
   mode: 'development',
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
+    compress: true,
     port: 3000,
   },
 };
