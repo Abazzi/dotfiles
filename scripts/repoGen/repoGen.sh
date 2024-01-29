@@ -48,6 +48,7 @@ while getopts "b:w:t:d" opt; do
         typescript ts-loader webpack-dev-server webpack webpack-cli\
         file-loader\
         @typescript-eslint/eslint-plugin @typescript-eslint/parser \
+        eslint-config-prettier eslint-plugin-prettier\
         --save-dev
       npm install --save clean-webpack-plugin
       echo "$i Repo Generated" | lolcat
@@ -86,7 +87,7 @@ while getopts "b:w:t:d" opt; do
       ;;
     t)
       i="$OPTARG"
-      echo "$repoGenTitle" | lolcat
+      echo "$repoGenTitle" 
       mkdir $i
 
       cd $i
@@ -124,9 +125,10 @@ while getopts "b:w:t:d" opt; do
         typescript ts-loader webpack-dev-server webpack webpack-cli\
         file-loader\
         @typescript-eslint/eslint-plugin @typescript-eslint/parser \
+        eslint-config-prettier eslint-plugin-prettier\
         --save-dev
       npm install --save clean-webpack-plugin
-      echo "$i Repo Generated" | lolcat
+      echo "$i Setup Finished"
       ;;
   esac
 done
