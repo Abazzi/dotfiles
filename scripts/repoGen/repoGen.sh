@@ -13,7 +13,7 @@ while getopts "b:w:t:d" opt; do
   case $opt in
     s)
       i="$OPTARG"
-      echo "$repoGenTitle" | lolcat
+      echo "$repoGenTitle"
       mkdir $i
 
       cd $i
@@ -46,7 +46,8 @@ while getopts "b:w:t:d" opt; do
       #& typescript
       npm init -y
       npm install prettier eslint-config-prettier  \
-        sass sass-loader style-loader css-loader css-minimizer-webpack-plugin\
+        style-loader css-loader css-minimizer-webpack-plugin \
+        mini-css-extract-plugin\
         html-webpack-plugin\
         typescript ts-loader webpack-dev-server webpack webpack-cli\
         file-loader\
@@ -125,7 +126,8 @@ while getopts "b:w:t:d" opt; do
       #& typescript
       npm init -y
       npm install prettier eslint-config-prettier  \
-        style-loader css-loader css-minimizer-webpack-plugin\
+        style-loader css-loader css-minimizer-webpack-plugin \
+        mini-css-extract-plugin\
         html-webpack-plugin\
         typescript ts-loader webpack-dev-server webpack webpack-cli\
         file-loader\
