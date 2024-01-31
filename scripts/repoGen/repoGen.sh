@@ -28,15 +28,18 @@ while getopts "b:w:t:d" opt; do
       cp ~/dotfiles/scripts/repoGen/webpackConfigs/withTypescript/webpack.dev.js webpack.dev.js 
       cp ~/dotfiles/scripts/repoGen/webpackConfigs/withTypescript/webpack.common.js webpack.common.js 
 
-      ## Create starter files
+      ## Create Source folder and templates, css, and ts folders 
       mkdir src
       cd src
       mkdir templates ts scss
       cd templates 
-      touch index.html
+      cp ~/dotfiles/scripts/repoGen/index.html index.html
       cd ../
       cd ts
-      touch index.ts styles.scss 
+      cp ~/dotfiles/scripts/repoGen/index.ts index.ts
+      cd ../
+      cd scss
+      cp ~/dotfiles/scripts/repoGen/styles.scss styles.scss 
       cd ../../
 
       ## initalize git repo and install eslint, prettier, webpack with sass
@@ -107,15 +110,15 @@ while getopts "b:w:t:d" opt; do
       ## Create starter files
       mkdir src
       cd src
-      mkdir templates ts css
+      mkdir templates ts css 
       cd templates 
-      touch index.html
+      cp ~/dotfiles/scripts/repoGen/index.html index.html
       cd ../
       cd ts
-      touch index.ts 
+      cp ~/dotfiles/scripts/repoGen/index.ts index.ts
       cd ../
-      cd css/
-      touch styles.css 
+      cd css
+      cp ~/dotfiles/scripts/repoGen/styles.css styles.css
       cd ../../
 
       ## initalize git repo and install eslint, prettier, webpack 
