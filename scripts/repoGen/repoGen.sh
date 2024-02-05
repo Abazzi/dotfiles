@@ -9,9 +9,9 @@ repoGenTitle=$'
 ▐     ▐    █    ▐   █                  ▐         █    ▐   █    ▐    ▐       █   █    
            ▐        ▐                            ▐        ▐                 ▐   ▐    '
 
-while getopts "b:w:t:d" opt; do
+while getopts "j:b:t" opt; do
   case $opt in
-    s)
+    b)
       i="$OPTARG"
       echo "$repoGenTitle"
       mkdir $i
@@ -22,46 +22,47 @@ while getopts "b:w:t:d" opt; do
       cp ~/dotfiles/assets/favicon.ico favicon.ico
       cp ~/dotfiles/gitconfig/.gitignore .gitignore
       cp ~/dotfiles/scripts/repoGen/.prettierrc.toml .prettierrc.toml
-      cp ~/dotfiles/scripts/repoGen/.eslintrc.json .eslintrc.json 
-      cp ~/dotfiles/scripts/repoGen/tsconfig.json tsconfig.json
-      cp ~/dotfiles/scripts/repoGen/webpackConfigs/withTypescript/webpack.production.js webpack.production.js 
-      cp ~/dotfiles/scripts/repoGen/webpackConfigs/withTypescript/webpack.dev.js webpack.dev.js 
-      cp ~/dotfiles/scripts/repoGen/webpackConfigs/withTypescript/webpack.common.js webpack.common.js 
+      cp ~/dotfiles/scripts/repoGen/babel/.eslintrc.json .eslintrc.json 
+      cp ~/dotfiles/scripts/repoGen/babel/babel.config.json babel.config.json
+      cp ~/dotfiles/scripts/repoGen/babel/webpack.production.js webpack.production.js 
+      cp ~/dotfiles/scripts/repoGen/babel/webpack.dev.js webpack.dev.js 
+      cp ~/dotfiles/scripts/repoGen/babel/webpack.common.js webpack.common.js 
 
       ## Create Source folder and templates, css, and ts folders 
       mkdir src
       cd src
-      mkdir templates ts scss
+      mkdir templates js css
       cd templates 
       cp ~/dotfiles/scripts/repoGen/index.html index.html
       cd ../
-      cd ts
-      cp ~/dotfiles/scripts/repoGen/index.ts index.ts
+      cd js
+      cp ~/dotfiles/scripts/repoGen/index.js index.js
       cd ../
-      cd scss
-      cp ~/dotfiles/scripts/repoGen/styles.scss styles.scss 
+      cd css
+      cp ~/dotfiles/scripts/repoGen/styles.css styles.css 
       cd ../../
 
-      ## initalize git repo and install eslint, prettier, webpack with sass
-      #& typescript
-      npm init -y
-      npm install prettier eslint-config-prettier  \
+      ## initalize git repo and install eslint, prettier, webpack and babel 
+      pnpm init 
+      pnpm add -D prettier eslint-config-prettier  \
         style-loader css-loader css-minimizer-webpack-plugin \
         mini-css-extract-plugin\
         html-webpack-plugin\
-        typescript ts-loader webpack-dev-server webpack webpack-cli\
-        file-loader\
-        @typescript-eslint/eslint-plugin @typescript-eslint/parser \
-        eslint-config-prettier eslint-plugin-prettier\
-        --save-dev
-      npm install --save clean-webpack-plugin
+        @babel/core @babel/preset-env \
+        webpack-dev-server webpack webpack-cli clean-webpack-plugin\
+        file-loader babel-loader\
+        eslint @babel/eslint-parser eslint-plugin-babel @babel/eslint-plugin\
+        eslint-config-prettier eslint-plugin-prettier eslint-webpack-plugin
+      pwd 
       sed -i '7s/$/,/' package.json
-      sed -i '7a/ "start":"webpack-dev-server --config webpack.dev.js"'
-      echo "$i Repo Generated" | lolcat
-      ;;
-    b)
+      sed -i '7a "dev":"webpack serve --config webpack.dev.js"' package.json
+      sed -i '8s/$/,/' package.json
+      sed -i '8a "build":"webpack"' package.json
+      echo "$i Repo Generated" 
+      ;; 
+    j)
       i="$OPTARG"
-      echo "Generating Bare Repo" | lolcat
+      echo "Generating Bare Repo" 
       mkdir $i
 
       cd $i
@@ -69,19 +70,19 @@ while getopts "b:w:t:d" opt; do
       ## Copy Favicon, gitignore and prettier config 
       cp ~/dotfiles/assets/favicon.ico favicon.ico
       cp ~/dotfiles/gitconfig/.gitignore .gitignore
-      cp ~/dotfiles/scripts/repoGen/.prettierrc.json .prettierrc.json
+      cp ~/dotfiles/scripts/repoGen/.prettierrc.toml .prettierrc.toml
 
       ## Create starter files
       mkdir src
       cd src
-      touch index.html index.js styles.scss
+      touch index.html index.js styles.css
       cd ..
 
-      ## initalize git repo and install eslint, prettier
-      npm init -y
-      npm install -d prettier eslint-config-prettier --save-dev
-      npm init @eslint/config
-      echo "$i Repo Generated" | lolcat
+      ## initalize and install eslint, prettier
+      pnpm init
+      pnpm install -d prettier eslint-config-prettier --save-dev
+      pnpm create @eslint/config
+      echo "$i Repo Generated" 
       ;;
     \?)
       echo "Invalid option: -$OPTARG" >&2
@@ -102,11 +103,11 @@ while getopts "b:w:t:d" opt; do
       cp ~/dotfiles/assets/favicon.ico favicon.ico
       cp ~/dotfiles/gitconfig/.gitignore .gitignore
       cp ~/dotfiles/scripts/repoGen/.prettierrc.toml .prettierrc.toml
-      cp ~/dotfiles/scripts/repoGen/.eslintrc.json .eslintrc.json 
-      cp ~/dotfiles/scripts/repoGen/tsconfig.json tsconfig.json
-      cp ~/dotfiles/scripts/repoGen/webpackConfigs/withTypescript/webpack.production.js webpack.production.js 
-      cp ~/dotfiles/scripts/repoGen/webpackConfigs/withTypescript/webpack.dev.js webpack.dev.js 
-      cp ~/dotfiles/scripts/repoGen/webpackConfigs/withTypescript/webpack.common.js webpack.common.js 
+      cp ~/dotfiles/scripts/repoGen/typescript/.eslintrc.json .eslintrc.json 
+      cp ~/dotfiles/scripts/repoGen/typescript/tsconfig.json tsconfig.json
+      cp ~/dotfiles/scripts/repoGen/typescript/webpack.production.js webpack.production.js 
+      cp ~/dotfiles/scripts/repoGen/typescript/webpack.dev.js webpack.dev.js 
+      cp ~/dotfiles/scripts/repoGen/typescript/webpack.common.js webpack.common.js 
 
       ## Create starter files
       mkdir src
@@ -124,8 +125,8 @@ while getopts "b:w:t:d" opt; do
 
       ## initalize git repo and install eslint, prettier, webpack 
       #& typescript
-      npm init -y
-      npm install prettier eslint-config-prettier  \
+      pnpm init 
+      pnpm add -D prettier eslint-config-prettier  \
         style-loader css-loader css-minimizer-webpack-plugin \
         mini-css-extract-plugin\
         html-webpack-plugin\
@@ -133,10 +134,11 @@ while getopts "b:w:t:d" opt; do
         file-loader\
         @typescript-eslint/eslint-plugin @typescript-eslint/parser \
         eslint-config-prettier eslint-plugin-prettier\
-        --save-dev
-      npm install --save clean-webpack-plugin
+      pnpm add --save clean-webpack-plugin
       sed -i '7s/$/,/' package.json
-      sed -i '7a "start":"webpack-dev-server --config webpack.dev.js"' package.json
+      sed -i '7a "dev":"webpack-dev-server --config webpack.dev.js"' package.json
+      sed -i '8s/$/,/' package.json
+      sed -i '8a "build":"webpack"' package.json
       echo "$i Setup Finished"
       ;;
   esac
