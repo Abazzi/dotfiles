@@ -58,6 +58,9 @@ alias pf="~/dotfiles/scripts/passfzf.sh "
 # fd() into repos directory
 alias fdr="fd ~/repos"
 
+#alias for pnpm
+alias pn="pnpm"
+
 # alias to fd() into web_dev directory in ~/repos
 alias webdr="fd ~/repos/web_dev"
 
