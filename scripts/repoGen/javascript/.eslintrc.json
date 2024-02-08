@@ -4,12 +4,11 @@
     "es2021": true
   },
   "extends": ["eslint:recommended", "prettier"],
-  "parser": "@babel/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["babel", "prettier"],
+  "plugins": ["prettier"],
   "rules": {
     "indent": ["warn", 2, { "SwitchCase": 1 }],
     "linebreak-style": ["error", "unix"],

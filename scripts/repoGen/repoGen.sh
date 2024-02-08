@@ -11,7 +11,7 @@ repoGenTitle=$'
 
 while getopts "j:b:t" opt; do
   case $opt in
-    b)
+    j)
       i="$OPTARG"
       echo "$repoGenTitle"
       mkdir $i
@@ -22,11 +22,10 @@ while getopts "j:b:t" opt; do
       cp ~/dotfiles/assets/favicon.ico favicon.ico
       cp ~/dotfiles/gitconfig/.gitignore .gitignore
       cp ~/dotfiles/scripts/repoGen/.prettierrc.toml .prettierrc.toml
-      cp ~/dotfiles/scripts/repoGen/babel/.eslintrc.json .eslintrc.json 
-      cp ~/dotfiles/scripts/repoGen/babel/babel.config.json babel.config.json
-      cp ~/dotfiles/scripts/repoGen/babel/webpack.production.js webpack.production.js 
-      cp ~/dotfiles/scripts/repoGen/babel/webpack.dev.js webpack.dev.js 
-      cp ~/dotfiles/scripts/repoGen/babel/webpack.common.js webpack.common.js 
+      cp ~/dotfiles/scripts/repoGen/javascript/.eslintrc.json .eslintrc.json 
+      cp ~/dotfiles/scripts/repoGen/javascript/webpack.production.js webpack.production.js 
+      cp ~/dotfiles/scripts/repoGen/javascript/webpack.dev.js webpack.dev.js 
+      cp ~/dotfiles/scripts/repoGen/javascript/webpack.common.js webpack.common.js 
 
       ## Create Source folder and templates, css, and ts folders 
       mkdir src
@@ -48,21 +47,19 @@ while getopts "j:b:t" opt; do
         style-loader css-loader css-minimizer-webpack-plugin \
         mini-css-extract-plugin\
         html-webpack-plugin\
-        @babel/core @babel/preset-env \
         webpack-dev-server webpack webpack-cli clean-webpack-plugin\
         file-loader babel-loader\
-        eslint @babel/eslint-parser eslint-plugin-babel @babel/eslint-plugin\
-        eslint-config-prettier eslint-plugin-prettier eslint-webpack-plugin
-      pwd 
+        eslint eslint-config-prettier eslint-plugin-prettier \
+      pnpm add --save clean-webpack-plugin
       sed -i '7s/$/,/' package.json
       sed -i '7a "dev":"webpack serve --config webpack.dev.js"' package.json
       sed -i '8s/$/,/' package.json
       sed -i '8a "build":"webpack"' package.json
       echo "$i Repo Generated" 
       ;; 
-    j)
+    b)
       i="$OPTARG"
-      echo "Generating Bare Repo" 
+      echo "$repoGenTitle" 
       mkdir $i
 
       cd $i
@@ -71,6 +68,7 @@ while getopts "j:b:t" opt; do
       cp ~/dotfiles/assets/favicon.ico favicon.ico
       cp ~/dotfiles/gitconfig/.gitignore .gitignore
       cp ~/dotfiles/scripts/repoGen/.prettierrc.toml .prettierrc.toml
+      cp ~/dotfiles/scripts/repoGen/javascript/.eslintrc.json .eslintrc.json
 
       ## Create starter files
       mkdir src
@@ -81,7 +79,6 @@ while getopts "j:b:t" opt; do
       ## initalize and install eslint, prettier
       pnpm init
       pnpm install -d prettier eslint-config-prettier --save-dev
-      pnpm create @eslint/config
       echo "$i Repo Generated" 
       ;;
     \?)
