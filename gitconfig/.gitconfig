@@ -12,10 +12,10 @@
 	dog = log --decorate --oneline --graph
   amend = commit --amend
   cm = commit -m 
-  c = checkout 
+  co = checkout 
   cb = checkout -b
-  b = branch -a
-  bd = branch -d
+  lb = branch -a
+  db = branch -d
 [merge]
 	tool = nvim
 	conflictstyle = diff3
