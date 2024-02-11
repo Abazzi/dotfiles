@@ -14,8 +14,8 @@
   cm = commit -m 
   c = checkout 
   cb = checkout -b
-  b = branch -a
-  bd = branch -d
+  lb = branch -a
+  bd = branch -D
 [merge]
 	tool = nvim
 	conflictstyle = diff3
