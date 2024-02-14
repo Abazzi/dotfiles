@@ -16,6 +16,8 @@
   cb = checkout -b
   lb = branch -a
   db = branch -d
+  lb = branch -a
+  bd = branch -D
 [merge]
 	tool = nvim
 	conflictstyle = diff3
