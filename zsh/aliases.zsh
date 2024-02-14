@@ -61,6 +61,12 @@ alias fdr="fd ~/repos"
 # alias to fd() into web_dev directory in ~/repos
 alias webdr="fd ~/repos/web_dev"
 
+## search manuals 
+alias zman="compgen -c | fzf | xargs man"
+
+## Find biggest files in current dir
+alias ffBig="du -ah . | sort -hr | head -n 10"
+
 # Pomodoro aliases
 alias wo="pomodoro 'work'"
 alias wol="pomodoro 'long-work'"
