@@ -67,6 +67,9 @@ alias zman="compgen -c | fzf | xargs man"
 ## Find biggest files in current dir
 alias ffBig="du -ah . | sort -hr | head -n 10"
 
+## Update System
+alias syu="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && flatpak update -y"
+
 # Pomodoro aliases
 alias wo="pomodoro 'work'"
 alias wol="pomodoro 'long-work'"
