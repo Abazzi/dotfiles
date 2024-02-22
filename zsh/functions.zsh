@@ -6,9 +6,12 @@
 # export LANG=en_US.UTF-8
 #VI Mode
 # vi mode
+autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
+compinit
 bindkey -v
+_comp_options+=(globdots)
 export KEYTIMEOUT=1
 
 # Use vim keys in tab complete menu:
