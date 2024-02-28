@@ -7,6 +7,10 @@ alias tn="tmux new -s "
 alias ta="tmux a -t "
 alias tk="tmux kill-sess -t "
 
+### Aliases for everything else ###
+
+alias la="ls -A"
+
 ## Run Repo Gen Script
 alias rg="$HOME/repoGen/repoGen.sh "
 

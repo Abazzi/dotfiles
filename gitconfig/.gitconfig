@@ -19,6 +19,7 @@
   lb = branch -a
   bd = branch -D
   lsa = config --get-regexp alias
+  rbi = rebase -i
 [merge]
 	tool = nvim
 	conflictstyle = diff3
