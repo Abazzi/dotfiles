@@ -18,7 +18,7 @@
   db = branch -d
   lb = branch -a
   bd = branch -D
-  lsA = config --get-regexp alias
+  lsa = config --get-regexp alias
 [merge]
 	tool = nvim
 	conflictstyle = diff3
