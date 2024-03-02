@@ -23,5 +23,10 @@ config.font_size = 16
 config.check_for_updates = true
 config.check_for_updates_interval_seconds = 604800
 
+-- Etc.
+config.warn_about_missing_glyphs = false
+config.use_fancy_tab_bar = false
+config.hide_tab_bar_if_only_one_tab = true
+
 -- and finally, return the configuration to wezterm
 return config
