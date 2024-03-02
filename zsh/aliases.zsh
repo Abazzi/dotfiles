@@ -44,6 +44,12 @@ alias ffBig="du -ah . | sort -hr | head -n 10"
 ## Update System
 alias syu="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && flatpak update -y"
 
+## Open Lazygit
+alias lg="lazygit"
+
+## WSL ONLY: Open Current Directory in Windows Explorer 
+alias explorer="explorer.exe ."
+
 # Pomodoro aliases
 alias wo="pomodoro 'work'"
 alias wol="pomodoro 'long-work'"
