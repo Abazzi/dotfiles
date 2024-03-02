@@ -14,7 +14,7 @@ alias tk="tmux kill-sess -t "
 ### Aliases for everything else ###
 
 ## Run Repo Gen Script
-alias rg="~/dotfiles/scripts/repoGen/repoGen.sh "
+alias rg="$HOME/repoGen/repoGen.sh "
 
 # better ls
 alias ls="ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal"
@@ -63,6 +63,15 @@ alias pn="pnpm"
 
 # alias to fd() into web_dev directory in ~/repos
 alias webdr="fd ~/repos/web_dev"
+
+## search manuals 
+alias zman="compgen -c | fzf | xargs man"
+
+## Find biggest files in current dir
+alias ffBig="du -ah . | sort -hr | head -n 10"
+
+## Update System
+alias syu="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && flatpak update -y"
 
 # Pomodoro aliases
 alias wo="pomodoro 'work'"

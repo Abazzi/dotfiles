@@ -13,14 +13,15 @@ end
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
-config.color_scheme = "Dracula"
+config.color_scheme = "Catppuccin Mocha (Gogh)"
 
 -- Font
-config.font = wezterm.font("Agave Nerd Font Mono")
+config.font = wezterm.font("CodeNewRoman Nerd Font Mono")
 config.font_size = 16
 
--- Keybindings
-config.leader = { key = " ", mods = "CTRL", timeout_milliseconds = 1000 }
+-- Check for updates every week
+config.check_for_updates = true
+config.check_for_updates_interval_seconds = 604800
 
 -- and finally, return the configuration to wezterm
 return config
