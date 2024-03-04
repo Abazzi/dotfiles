@@ -19,9 +19,11 @@ config.color_scheme = "Catppuccin Mocha (Gogh)"
 config.font = wezterm.font("CodeNewRoman Nerd Font Mono")
 config.font_size = 16
 
--- Check for updates every week
-config.check_for_updates = true
-config.check_for_updates_interval_seconds = 604800
+-- Etc.
+config.warn_about_missing_glyphs = false
+config.use_fancy_tab_bar = false
+config.hide_tab_bar_if_only_one_tab = true
+config.check_for_updates = false
 
 -- and finally, return the configuration to wezterm
 return config
