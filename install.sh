@@ -7,7 +7,6 @@ echo -e "\033[32m ----------------------------------------\033[0m"
 apt install -y git && \
 apt install -y curl && \
 apt install -y fzf && \
-apt install -y stow && \
 apt install -y xclip && \
 apt install -y ripgrep && \
 apt install -y fd-find && \
@@ -20,13 +19,7 @@ echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Change Shell to Zsh\033[0m"
 echo -e "\033[32m ----------------------------------------\033[0m"
 chsh -s $(which zsh)
-
-
-echo -e "\033[32m ----------------------------------------\033[0m"
-echo -e "\033[32m Install Oh-My-Zsh\033[0m"
-echo -e "\033[32m ----------------------------------------\033[0m"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
+ln -s ~/.dotfiles/zsh/.zshrc ~/.config/.zshrc
 
 
 echo -e "\033[32m ----------------------------------------\033[0m"
@@ -36,23 +29,15 @@ git config --global user.email "8884041+Abazzi@users.noreply.github.com"
 git config --global user.name "Adam Bazzi"
 
 echo -e "\033[32m ----------------------------------------\033[0m"
-echo -e "\033[32m Running stow\033[0m"
+echo -e "\033[32m Creating Sym links for dotfiles\033[0m"
 echo -e "\033[32m ----------------------------------------\033[0m"
-STOW_FOLDERS=tmux,gitconfig,zshrc
-pushd ~/.dotfiles
-for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
-do
-	# read -p "Stow $folder? (y/n) " -n 1 -r stow_current_folder
-	# echo ""
-	# if [[ $stow_current_folder =~ ^[Yy]$ ]]
-	# then
-		[ -a ~/.$folder ] && echo "Move existing file to ~/.$folder.stowbak" && mv ~/.$folder ~/.$folder.stowbak
-		echo Running stow $folder
-		stow -D $folder
-		stow $folder
-	# fi
-done
-popd
+ln -s ~/.dotfiles/gitconfig/.gitconfig  ~/.config/.gitconfig
+ln -s ~/.dotfiles/otherConfigs/.wezterm.lua ~/.config/.wezterm.lua
+
+echo -e "\033[32m ----------------------------------------\033[0m"
+echo -e "\033[32m Copy Script folder to home directory\033[0m"
+echo -e "\033[32m ----------------------------------------\033[0m"
+cp -r ~/.dotfiles/scripts ~/
 
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Build Neovim from source\033[0m"
@@ -68,6 +53,12 @@ make install
 popd
 
 echo -e "\033[32m ----------------------------------------\033[0m"
+echo -e "\033[32m Sym link neovim config\033[0m"
+echo -e "\033[32m ----------------------------------------\033[0m"
+git submodule init nvim
+ln -s ~/.dotfiles/nvim/ ~/.config/nvim
+
+echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Build fzf for use in Telescope\033[0m"
 echo -e "\033[32m ----------------------------------------\033[0m"
 pushd ~/.local/share/nvim/plugged/telescope-fzf-native.nvim
@@ -81,3 +72,37 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 # exec bash
 nvm install --lts
 nvm use --lts
+
+echo -e "\033[32m ----------------------------------------\033[0m"
+echo -e "\033[32m Copy Tmux Config and tmux-sessionizer"
+echo -e "\033[32m ----------------------------------------\033[0m"
+ln -s ~/.dotfiles/tmux/tmux.conf ~/.config/.tmux.conf
+cp ~/.dotfiles/tmux/tmux-sessionizer ~/.local/bin/
+
+echo -e "\033[32m ----------------------------------------\033[0m"
+echo -e "\033[32m Copy vimrc to .config folder"
+echo -e "\033[32m ----------------------------------------\033[0m"
+ln -s ~/.dotfiles/vim/.vimrc ~/.config/.vimrc
+
+echo -e "\033[32m ----------------------------------------\033[0m"
+echo -e "\033[32m Install Rust"
+echo -e "\033[32m ----------------------------------------\033[0m"
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+echo -e "\033[32m ----------------------------------------\033[0m"
+echo -e "\033[32m Install Dependies for silicon"
+echo -e "\033[32m ----------------------------------------\033[0m"
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+sudo apt install expat \
+         libxml2-dev \
+         pkg-config libasound2-dev libssl-dev \
+         cmake libfreetype6-dev libexpat1-dev\
+         libxcb-composite0-dev libharfbuzz-dev\
+
+echo -e "\033[32m ----------------------------------------\033[0m"
+echo -e "\033[32m Install packages via cargo"
+echo -e "\033[32m ----------------------------------------\033[0m"
+cargo install \
+  bat\
+  bob\
+  silicon\
