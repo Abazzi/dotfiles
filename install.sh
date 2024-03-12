@@ -21,7 +21,6 @@ echo -e "\033[32m ----------------------------------------\033[0m"
 chsh -s $(which zsh)
 ln -s ~/.dotfiles/zsh/.zshrc ~/.config/.zshrc
 
-
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Configure Git\033[0m"
 echo -e "\033[32m ----------------------------------------\033[0m"
@@ -33,6 +32,7 @@ echo -e "\033[32m Creating Sym links for dotfiles\033[0m"
 echo -e "\033[32m ----------------------------------------\033[0m"
 ln -s ~/.dotfiles/gitconfig/.gitconfig  ~/.config/.gitconfig
 ln -s ~/.dotfiles/otherConfigs/.wezterm.lua ~/.config/.wezterm.lua
+ln -s ~/.dotfiles/lf ~/.config/lf
 
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Copy Script folder to home directory\033[0m"
@@ -135,6 +135,11 @@ git clone https://github.com/jaseg/lolcat.git
 cd lolcat/
 make && sudo make install
 cd ..
+
+echo -e "\033[32m ----------------------------------------\033[0m"
+echo -e "\033[32m Install pip"
+echo -e "\033[32m ----------------------------------------\033[0m"
+apt-get install pip
 
 echo                                                                                                                                       
 " @@@@@@   @@@@@@@@  @@@@@@@  @@@  @@@  @@@@@@@       @@@@@@@   @@@@@@   @@@@@@@@@@   @@@@@@@   @@@       @@@@@@@@  @@@@@@@  @@@@@@@@  
