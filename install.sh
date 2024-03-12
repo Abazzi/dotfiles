@@ -69,6 +69,7 @@ echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Install tpm (Tmux Package Manager)"
 echo -e "\033[32m ----------------------------------------\033[0m"
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Install nvm to manage NodeJS\033[0m"
 echo -e "\033[32m ----------------------------------------\033[0m"
@@ -126,3 +127,12 @@ env CGO_ENABLED=0 go install -ldflags="-s -w" github.com/gokcehan/lf@latest
 echo 'deb [trusted=yes] https://repo.caarlos0.dev/apt/ /' | sudo tee /etc/apt/sources.list.d/caarlos0.list
 sudo apt update
 sudo apt install timer
+
+echo -e "\033[32m ----------------------------------------\033[0m"
+echo -e "\033[32m Install lolcat (C based version)"
+echo -e "\033[32m ----------------------------------------\033[0m"
+git clone https://github.com/jaseg/lolcat.git 
+cd lolcat/
+make && sudo make install
+
+cd ..
