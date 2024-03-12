@@ -110,3 +110,19 @@ cargo install \
   bat\
   bob\
   silicon\
+
+echo -e "\033[32m ----------------------------------------\033[0m"
+echo -e "\033[32m Install go (and remove old go installation if it exists)"
+echo -e "\033[32m ----------------------------------------\033[0m"
+wget https://go.dev/dl/go1.22.1.linux-amd64.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.22.1.linux-amd64.tar.gz
+
+echo -e "\033[32m ----------------------------------------\033[0m"
+echo -e "\033[32m Install golang based packages"
+echo -e "\033[32m ----------------------------------------\033[0m"
+go install github.com/jesseduffield/lazygit@latest
+env CGO_ENABLED=0 go install -ldflags="-s -w" github.com/gokcehan/lf@latest
+
+echo 'deb [trusted=yes] https://repo.caarlos0.dev/apt/ /' | sudo tee /etc/apt/sources.list.d/caarlos0.list
+sudo apt update
+sudo apt install timer
