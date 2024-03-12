@@ -21,7 +21,6 @@ echo -e "\033[32m ----------------------------------------\033[0m"
 chsh -s $(which zsh)
 ln -s ~/.dotfiles/zsh/.zshrc ~/.config/.zshrc
 
-
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Configure Git\033[0m"
 echo -e "\033[32m ----------------------------------------\033[0m"
@@ -33,6 +32,7 @@ echo -e "\033[32m Creating Sym links for dotfiles\033[0m"
 echo -e "\033[32m ----------------------------------------\033[0m"
 ln -s ~/.dotfiles/gitconfig/.gitconfig  ~/.config/.gitconfig
 ln -s ~/.dotfiles/otherConfigs/.wezterm.lua ~/.config/.wezterm.lua
+ln -s ~/.dotfiles/lf ~/.config/lf
 
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Copy Script folder to home directory\033[0m"
@@ -64,6 +64,11 @@ echo -e "\033[32m ----------------------------------------\033[0m"
 pushd ~/.local/share/nvim/plugged/telescope-fzf-native.nvim
 make
 popd
+
+echo -e "\033[32m ----------------------------------------\033[0m"
+echo -e "\033[32m Install tpm (Tmux Package Manager)"
+echo -e "\033[32m ----------------------------------------\033[0m"
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Install nvm to manage NodeJS\033[0m"
@@ -106,3 +111,45 @@ cargo install \
   bat\
   bob\
   silicon\
+
+echo -e "\033[32m ----------------------------------------\033[0m"
+echo -e "\033[32m Install go (and remove old go installation if it exists)"
+echo -e "\033[32m ----------------------------------------\033[0m"
+wget https://go.dev/dl/go1.22.1.linux-amd64.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.22.1.linux-amd64.tar.gz
+
+echo -e "\033[32m ----------------------------------------\033[0m"
+echo -e "\033[32m Install golang based packages"
+echo -e "\033[32m ----------------------------------------\033[0m"
+go install github.com/jesseduffield/lazygit@latest
+env CGO_ENABLED=0 go install -ldflags="-s -w" github.com/gokcehan/lf@latest
+
+echo 'deb [trusted=yes] https://repo.caarlos0.dev/apt/ /' | sudo tee /etc/apt/sources.list.d/caarlos0.list
+sudo apt update
+sudo apt install timer
+
+echo -e "\033[32m ----------------------------------------\033[0m"
+echo -e "\033[32m Install lolcat (C based version)"
+echo -e "\033[32m ----------------------------------------\033[0m"
+git clone https://github.com/jaseg/lolcat.git 
+cd lolcat/
+make && sudo make install
+cd ..
+
+echo -e "\033[32m ----------------------------------------\033[0m"
+echo -e "\033[32m Install pip"
+echo -e "\033[32m ----------------------------------------\033[0m"
+apt-get install pip
+
+echo                                                                                                                                       
+" @@@@@@   @@@@@@@@  @@@@@@@  @@@  @@@  @@@@@@@       @@@@@@@   @@@@@@   @@@@@@@@@@   @@@@@@@   @@@       @@@@@@@@  @@@@@@@  @@@@@@@@  
+@@@@@@@   @@@@@@@@  @@@@@@@  @@@  @@@  @@@@@@@@     @@@@@@@@  @@@@@@@@  @@@@@@@@@@@  @@@@@@@@  @@@       @@@@@@@@  @@@@@@@  @@@@@@@@  
+!@@       @@!         @@!    @@!  @@@  @@!  @@@     !@@       @@!  @@@  @@! @@! @@!  @@!  @@@  @@!       @@!         @@!    @@!       
+!@!       !@!         !@!    !@!  @!@  !@!  @!@     !@!       !@!  @!@  !@! !@! !@!  !@!  @!@  !@!       !@!         !@!    !@!       
+!!@@!!    @!!!:!      @!!    @!@  !@!  @!@@!@!      !@!       @!@  !@!  @!! !!@ @!@  @!@@!@!   @!!       @!!!:!      @!!    @!!!:!    
+ !!@!!!   !!!!!:      !!!    !@!  !!!  !!@!!!       !!!       !@!  !!!  !@!   ! !@!  !!@!!!    !!!       !!!!!:      !!!    !!!!!:    
+     !:!  !!:         !!:    !!:  !!!  !!:          :!!       !!:  !!!  !!:     !!:  !!:       !!:       !!:         !!:    !!:       
+    !:!   :!:         :!:    :!:  !:!  :!:          :!:       :!:  !:!  :!:     :!:  :!:        :!:      :!:         :!:    :!:       
+:::: ::    :: ::::     ::    ::::: ::   ::           ::: :::  ::::: ::  :::     ::    ::        :: ::::   :: ::::     ::     :: ::::  
+:: : :    : :: ::      :      : :  :    :            :: :: :   : :  :    :      :     :        : :: : :  : :: ::      :     : :: ::  
+" 
