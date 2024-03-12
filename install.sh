@@ -66,6 +66,10 @@ make
 popd
 
 echo -e "\033[32m ----------------------------------------\033[0m"
+echo -e "\033[32m Install tpm (Tmux Package Manager)"
+echo -e "\033[32m ----------------------------------------\033[0m"
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Install nvm to manage NodeJS\033[0m"
 echo -e "\033[32m ----------------------------------------\033[0m"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
