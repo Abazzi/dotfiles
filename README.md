@@ -13,10 +13,9 @@
 
 # Repo for Dotfiles
 
-I'm going to keep my dotfiles for these programs
-
 - nvim
 - vim
+- lf
 - zsh
 - tmux
 - git (.gitignore, .gitconfig)
@@ -25,6 +24,7 @@ I'm going to keep my dotfiles for these programs
 - Helper Scripts
 - Auto Hot Key
 - HHKB Layout file + Reference Images
+- install script
 
 # Attriutes
 
