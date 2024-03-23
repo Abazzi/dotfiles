@@ -12,7 +12,8 @@ alias tk="tmux kill-sess -t "
 alias la="ls -A"
 
 ## Run Repo Gen Script
-alias rg="$HOME/repoGen/repoGen.sh "
+alias rg="$HOME/repoGen/repoGen.sh"
+alias vd="$HOME/repoGen/viteDependencies.sh"
 
 # better ls
 alias ls="ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal"
