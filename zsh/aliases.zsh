@@ -25,8 +25,8 @@ alias nvimcw="cd $HOME/AppData/Local/nvim"
 # source zsh config file
 alias szh="source ~/.zshrc"
 
-# nvim alias to just go into directory
-alias nv="nvim ."
+# nvim alias 
+alias nv="nvim"
 
 # cd into neovim config folder
 alias ns="cd $HOME/dotfiles/nvim"
