@@ -18,7 +18,6 @@ config.color_scheme = "Catppuccin Mocha (Gogh)"
 -- Font
 config.font = wezterm.font("CodeNewRoman Nerd Font Mono")
 config.font_size = 16
-config.line_height = 1.2
 
 -- Etc.
 config.warn_about_missing_glyphs = false

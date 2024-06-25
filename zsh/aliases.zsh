@@ -52,6 +52,9 @@ alias syu="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && f
 ## Open Lazygit
 alias lg="lazygit"
 
+function lk {
+  cd "$(walk --icons "$@")"
+}
 ## WSL ONLY: Open Current Directory in Windows Explorer 
 alias explorer="explorer.exe ."
 
