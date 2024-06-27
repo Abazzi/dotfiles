@@ -51,21 +51,17 @@ alias syu="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && f
 
 ## Open Lazygit
 alias lg="lazygit"
-
-function lk {
-  cd "$(walk --icons "$@")"
-}
 ## WSL ONLY: Open Current Directory in Windows Explorer 
 alias explorer="explorer.exe ."
 
 # Pomodoro aliases
-alias wo="pomodoro 'work'"
-alias wol="pomodoro 'long-work'"
-alias br="pomodoro 'break'"
-alias brl="pomodoro 'long-break'"
-alias ptest="pomodoro 'test'"
+alias pWork="pomodoro 'work'"
+alias pLongWork="pomodoro 'long-work'"
+alias pBreak="pomodoro 'break'"
+alias pLongBreak="pomodoro 'long-break'"
 alias p10="pomodoro 'ten'"
 alias p20="pomodoro 'twenty'"
 alias p30="pomodoro 'thirty'"
 alias p40="pomodoro 'fourty'"
 alias p50="pomodoro 'fifty'"
+alias p60="pomodoro 'hour'"
