@@ -34,7 +34,7 @@ function zle-keymap-select {
   fi
 }
 zle -N zle-keymap-select
-zle-line-init() {
+function zle-line-init() {
     zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
     echo -ne "\e[5 q"
 }
@@ -44,7 +44,7 @@ echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 ## fuzzy finder into directory
-fd() {
+function fd() {
  local dir
   dir=$(find ${1:-.} -path '*/\.*' -prune \
                   -o -type d -print 2> /dev/null | fzf +m) &&
@@ -54,7 +54,7 @@ fd() {
 # fcd- fuzzy cd from anywhere
 # ex: fcd word1 word2 ... (even part of a file name)
 # zsh autoload function
-fcd() {
+function fcd() {
   local file
 
   file="$(locate -Ai -0 $@ | grep -z -vE '~$' | fzf --read0 -0 -1)"
@@ -85,7 +85,7 @@ pomo_options["fourty"]="40"
 pomo_options["fifty"]="50"
 pomo_options["hour"]="60"
 
-pomodoro () {
+function pomodoro () {
   if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
   val=$1
   echo $val | lolcat
@@ -96,12 +96,12 @@ pomodoro () {
   fi
 }
 
-timer-notify-send(){
+function timer-notify-send(){
   notify-send "Timer is Done" "Nice dawg ;)" --icon="wizard-hat"
 }
 
 # Use lf to switch directories and bind it to ctrl-o
-lfcd () { tmp="$(mktemp)"
+function lfcd () { tmp="$(mktemp)"
     lf -last-dir-path="$tmp" "$@"
     if [ -f "$tmp" ]; then
         dir="$(cat "$tmp")"
@@ -111,9 +111,13 @@ lfcd () { tmp="$(mktemp)"
 }
 bindkey -s '^o' 'lfcd\n'
 
-timezsh () {
+function timezsh () {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
 
 bindkey -s ^f "tmux-sessionizer\n"
+
+function lk {
+  cd "$(walk --icons "$@")"
+}
