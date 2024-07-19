@@ -40,6 +40,9 @@ alias fdr="fd ~/repos"
 #alias for pnpm
 alias pn="pnpm"
 
+#start godoc server
+alias gdServe="godoc -http=localhost:8000"
+
 ## search manuals 
 alias zman="compgen -c | fzf | xargs man"
 
