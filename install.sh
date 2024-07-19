@@ -40,17 +40,32 @@ echo -e "\033[32m ----------------------------------------\033[0m"
 cp -r ~/.dotfiles/scripts ~/
 
 echo -e "\033[32m ----------------------------------------\033[0m"
-echo -e "\033[32m Build Neovim from source\033[0m"
+echo -e "\033[32m Install Rust"
 echo -e "\033[32m ----------------------------------------\033[0m"
-mkdir -p ~/source-github
-pushd ~/source-github
-git clone https://github.com/neovim/neovim
-cd neovim
-git checkout stable
-apt install -y ninja-build gettext cmake unzip curl
-make CMAKE_BUILD_TYPE=Release
-make install
-popd
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+echo -e "\033[32m ----------------------------------------\033[0m"
+echo -e "\033[32m Install Dependies for silicon"
+echo -e "\033[32m ----------------------------------------\033[0m"
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+sudo apt install expat \
+         libxml2-dev \
+         pkg-config libasound2-dev libssl-dev \
+         cmake libfreetype6-dev libexpat1-dev\
+         libxcb-composite0-dev libharfbuzz-dev\
+
+echo -e "\033[32m ----------------------------------------\033[0m"
+echo -e "\033[32m Install packages via cargo"
+echo -e "\033[32m ----------------------------------------\033[0m"
+cargo install \
+  bat\
+  bob\
+  silicon\
+
+echo -e "\033[32m ----------------------------------------\033[0m"
+echo -e "\033[32m Setup bob (Neovim Version Manager)"
+echo -e "\033[32m ----------------------------------------\033[0m"
+bob use stable
 
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Sym link neovim config\033[0m"
@@ -89,28 +104,6 @@ echo -e "\033[32m Copy vimrc to .config folder"
 echo -e "\033[32m ----------------------------------------\033[0m"
 ln -s ~/.dotfiles/vim/.vimrc ~/.config/.vimrc
 
-echo -e "\033[32m ----------------------------------------\033[0m"
-echo -e "\033[32m Install Rust"
-echo -e "\033[32m ----------------------------------------\033[0m"
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-echo -e "\033[32m ----------------------------------------\033[0m"
-echo -e "\033[32m Install Dependies for silicon"
-echo -e "\033[32m ----------------------------------------\033[0m"
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-sudo apt install expat \
-         libxml2-dev \
-         pkg-config libasound2-dev libssl-dev \
-         cmake libfreetype6-dev libexpat1-dev\
-         libxcb-composite0-dev libharfbuzz-dev\
-
-echo -e "\033[32m ----------------------------------------\033[0m"
-echo -e "\033[32m Install packages via cargo"
-echo -e "\033[32m ----------------------------------------\033[0m"
-cargo install \
-  bat\
-  bob\
-  silicon\
 
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Install go (and remove old go installation if it exists)"
@@ -122,6 +115,7 @@ echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Install golang based packages"
 echo -e "\033[32m ----------------------------------------\033[0m"
 go install github.com/jesseduffield/lazygit@latest
+go install github.com/antonmedv/walk@latest
 env CGO_ENABLED=0 go install -ldflags="-s -w" github.com/gokcehan/lf@latest
 
 echo 'deb [trusted=yes] https://repo.caarlos0.dev/apt/ /' | sudo tee /etc/apt/sources.list.d/caarlos0.list
