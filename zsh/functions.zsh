@@ -121,3 +121,11 @@ bindkey -s ^f "tmux-sessionizer\n"
 function lk {
   cd "$(walk --icons "$@")"
 }
+
+function createViteTS {
+  pnpm create vite $1 --template vanilla-ts 
+}
+
+function createViteJS {
+  pnpm create vite $1 --template vanilla
+}
