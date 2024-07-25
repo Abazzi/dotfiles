@@ -13,7 +13,7 @@ end
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
-config.color_scheme = "Catppuccin Mocha (Gogh)"
+config.color_scheme = "Gruvbox Dark (Gogh)"
 
 -- Font
 config.font = wezterm.font("Maple Mono NF")
