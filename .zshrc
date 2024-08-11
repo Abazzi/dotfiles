@@ -1,5 +1,5 @@
 # Load seperated config files
-for conf in "$HOME/dotfiles/zsh/"*.zsh; do
+for conf in "$HOME/.config/zsh/"*.zsh; do
   source "${conf}"
 done
 autoload -U colors && colors
