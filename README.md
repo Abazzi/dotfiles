@@ -15,16 +15,18 @@
 
 - nvim
 - vim
-- lf
 - zsh
 - tmux
 - git (.gitignore, .gitconfig)
-- prettier
 - wezterm
 - Helper Scripts
 - Auto Hot Key
 - HHKB Layout file + Reference Images
 - install script
+
+# Instructions 
+
+Clone repo and run the install script to set up the dev enviorment
 
 # Attriutes
 
