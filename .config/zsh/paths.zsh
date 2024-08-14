@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH="$PATH:$HOME/bin:/usr/local/bin:$HOME/.local/bin:$GO_PATH:$BOB_PATH"
+export PATH="$PATH:$HOME/bin:/usr/local/bin:$HOME/.local/bin:$GO_PATH:$BOB_PATH:"
 export GO_PATH="$PATH:/usr/local/go/bin:$PATH:$HOME/go/bin:$PATH:/usr/local/share/go/bin"
 export BOB_PATH="$HOME/.local/share/bob/nvim-bin"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
