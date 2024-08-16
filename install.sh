@@ -13,13 +13,13 @@ apt install -y fd-find && \
 apt install -y build-essential && \
 apt install -y tmux && \
 apt install -y btop && \
+apt install -y stow && \
 apt install -y zsh 
 
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Change Shell to Zsh\033[0m"
 echo -e "\033[32m ----------------------------------------\033[0m"
 chsh -s $(which zsh)
-ln -s ~/.dotfiles/zsh/.zshrc ~/.config/.zshrc
 
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Configure Git\033[0m"
@@ -27,17 +27,6 @@ echo -e "\033[32m ----------------------------------------\033[0m"
 git config --global user.email "8884041+Abazzi@users.noreply.github.com"
 git config --global user.name "Adam Bazzi"
 
-echo -e "\033[32m ----------------------------------------\033[0m"
-echo -e "\033[32m Creating Sym links for dotfiles\033[0m"
-echo -e "\033[32m ----------------------------------------\033[0m"
-ln -s ~/.dotfiles/gitconfig/.gitconfig  ~/.config/.gitconfig
-ln -s ~/.dotfiles/otherConfigs/.wezterm.lua ~/.config/.wezterm.lua
-ln -s ~/.dotfiles/lf ~/.config/lf
-
-echo -e "\033[32m ----------------------------------------\033[0m"
-echo -e "\033[32m Copy Script folder to home directory\033[0m"
-echo -e "\033[32m ----------------------------------------\033[0m"
-cp -r ~/.dotfiles/scripts ~/
 
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Install Rust"
@@ -71,7 +60,6 @@ echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Sym link neovim config\033[0m"
 echo -e "\033[32m ----------------------------------------\033[0m"
 git submodule init nvim
-ln -s ~/.dotfiles/nvim/ ~/.config/nvim
 
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Build fzf for use in Telescope\033[0m"
@@ -96,14 +84,7 @@ nvm use --lts
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Copy Tmux Config and tmux-sessionizer"
 echo -e "\033[32m ----------------------------------------\033[0m"
-ln -s ~/.dotfiles/tmux/tmux.conf ~/.config/.tmux.conf
 cp ~/.dotfiles/tmux/tmux-sessionizer ~/.local/bin/
-
-echo -e "\033[32m ----------------------------------------\033[0m"
-echo -e "\033[32m Copy vimrc to .config folder"
-echo -e "\033[32m ----------------------------------------\033[0m"
-ln -s ~/.dotfiles/vim/.vimrc ~/.config/.vimrc
-
 
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Install go (and remove old go installation if it exists)"
@@ -134,6 +115,11 @@ echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Install pip"
 echo -e "\033[32m ----------------------------------------\033[0m"
 apt-get install pip
+
+echo -e "\033[32m ----------------------------------------\033[0m"
+echo -e "\033[32m Run GNU Stow\033[0m"
+echo -e "\033[32m ----------------------------------------\033[0m"
+stow .
 
 echo                                                                                                                                       
 " @@@@@@   @@@@@@@@  @@@@@@@  @@@  @@@  @@@@@@@       @@@@@@@   @@@@@@   @@@@@@@@@@   @@@@@@@   @@@       @@@@@@@@  @@@@@@@  @@@@@@@@  

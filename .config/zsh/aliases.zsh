@@ -29,7 +29,7 @@ alias szh="source ~/.zshrc"
 alias nv="nvim"
 
 # cd into neovim config folder
-alias ns="cd $HOME/dotfiles/nvim"
+alias ns="cd $HOME/dotfiles/.config/nvim"
 
 # launch cht.sh script
 alias cht="~/dotfiles/scripts/tmux-cht/tmux-cht.sh "
