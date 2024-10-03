@@ -1,0 +1,21 @@
+{
+  "items": [
+    {
+      "title": "Minimize Window : meta + m",
+      "tag": "Kwin"
+    },
+    {
+      "title": "Maximize window : meta + up",
+      "tag": "Kwin"
+    },
+    {
+      "title": "Pomodoro 60: p60",
+      "tag": "Pomodoro"
+    },
+  ],
+  "styles": {
+    "subtext": "#6c7086",
+    "accent": "#b4befe"
+  }
+}
+
