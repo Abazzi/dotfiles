@@ -84,6 +84,7 @@ pomo_options["thirty"]="30"
 pomo_options["fourty"]="40"
 pomo_options["fifty"]="50"
 pomo_options["hour"]="60"
+pomo_options["ninety"]="90"
 
 function pomodoro () {
   if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
