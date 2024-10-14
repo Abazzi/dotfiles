@@ -9,7 +9,7 @@
       "⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣛⠛⠛⠛⠛⠛⢛⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀",
       "⠀⠀⠀⠀⠀⠿⣿⣿⣿⠿⠿⠀⠀⠀⠀⠀⠸⣿⣿⣿⣿⠿⠇⠀  ⠀⠀⠀⠀",
       "                              ",
-      "  There is no place like ~/   ",
+      "  Good Luck Setting This Up   ",
 
 # Repo for Dotfiles
 
@@ -23,6 +23,7 @@
 - Auto Hot Key
 - HHKB Layout file + Reference Images
 - install script
+- [gocheat](https://github.com/Achno/gocheat?tab=readme-ov-file#overview-) 
 
 # Instructions 
 
