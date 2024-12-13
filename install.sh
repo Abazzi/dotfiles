@@ -14,12 +14,8 @@ apt install -y build-essential && \
 apt install -y tmux && \
 apt install -y btop && \
 apt install -y stow && \
+apt install -y jq && \
 apt install -y zsh 
-
-echo -e "\033[32m ----------------------------------------\033[0m"
-echo -e "\033[32m Change Shell to Zsh\033[0m"
-echo -e "\033[32m ----------------------------------------\033[0m"
-chsh -s $(which zsh)
 
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Configure Git\033[0m"
@@ -32,16 +28,6 @@ echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Install Rust"
 echo -e "\033[32m ----------------------------------------\033[0m"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-echo -e "\033[32m ----------------------------------------\033[0m"
-echo -e "\033[32m Install Dependies for silicon"
-echo -e "\033[32m ----------------------------------------\033[0m"
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-sudo apt install expat \
-         libxml2-dev \
-         pkg-config libasound2-dev libssl-dev \
-         cmake libfreetype6-dev libexpat1-dev\
-         libxcb-composite0-dev libharfbuzz-dev\
 
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Install packages via cargo"
@@ -59,12 +45,12 @@ bob use stable
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Sym link neovim config\033[0m"
 echo -e "\033[32m ----------------------------------------\033[0m"
-git submodule init nvim
+git submodule init
 
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Build fzf for use in Telescope\033[0m"
 echo -e "\033[32m ----------------------------------------\033[0m"
-pushd ~/.local/share/nvim/plugged/telescope-fzf-native.nvim
+pushd ~/.local/share/nvim/lazy/telescope-fzf-native.nvim
 make
 popd
 
@@ -121,6 +107,11 @@ echo -e "\033[32m Run GNU Stow\033[0m"
 echo -e "\033[32m ----------------------------------------\033[0m"
 stow .
 
+echo -e "\033[32m ----------------------------------------\033[0m"
+echo -e "\033[32m Change Shell to Zsh\033[0m"
+echo -e "\033[32m ----------------------------------------\033[0m"
+chsh -s $(which zsh)
+
 echo                                                                                                                                       
 " @@@@@@   @@@@@@@@  @@@@@@@  @@@  @@@  @@@@@@@       @@@@@@@   @@@@@@   @@@@@@@@@@   @@@@@@@   @@@       @@@@@@@@  @@@@@@@  @@@@@@@@  
 @@@@@@@   @@@@@@@@  @@@@@@@  @@@  @@@  @@@@@@@@     @@@@@@@@  @@@@@@@@  @@@@@@@@@@@  @@@@@@@@  @@@       @@@@@@@@  @@@@@@@  @@@@@@@@  
@@ -132,4 +123,4 @@ echo
     !:!   :!:         :!:    :!:  !:!  :!:          :!:       :!:  !:!  :!:     :!:  :!:        :!:      :!:         :!:    :!:       
 :::: ::    :: ::::     ::    ::::: ::   ::           ::: :::  ::::: ::  :::     ::    ::        :: ::::   :: ::::     ::     :: ::::  
 :: : :    : :: ::      :      : :  :    :            :: :: :   : :  :    :      :     :        : :: : :  : :: ::      :     : :: ::  
-" 
+" | lolcat 
