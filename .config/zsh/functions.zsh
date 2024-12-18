@@ -130,3 +130,11 @@ function createViteTS {
 function createViteJS {
   pnpm create vite $1 --template vanilla
 }
+
+function newReact {
+  pnpm create vite $1 --template react 
+}
+
+function newReactTs {
+  pnpm create vite $1 --template react-ts 
+}
