@@ -1,10 +1,21 @@
 [user]
 	name = Adam Bazzi
-	email = 8884041+Abazzi@users.noreply.github.com
+	email = adam@adambazzi.ca
+
 [core]
 	editor = vim
+  pager = delta
+
+[delta]
+  navigate = true
+  syntax-theme = gruvbox
+
+[interactive]
+  diffFilter = delta --color-only
+
 [init]
 	defaultBranch = main
+
 [alias]
 	; logo = log --pretty=tformat:'%m %C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,blue)%>(12,trunc)%ad %C(auto,green)%<(15,trunc)%aN%C(auto,reset)%s%C(auto,red)% gD% D' --date=short
 	logo = log --pretty=tformat:'%C(auto,red)%m %C(auto,yellow)%h%C(auto,magenta) %G? %C(auto,blue)%>(12,trunc)%ad %C(auto,green)%<(15,trunc)%aN%C(auto,reset)%s%C(auto,red) %gD %D' --date=short
@@ -20,21 +31,28 @@
   bd = branch -D
   lsa = config --get-regexp alias
   rbi = rebase -i
+
 [merge]
 	tool = nvim
 	conflictstyle = diff3
+
 [mergetool "nvim"]
 	cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 	; trustExitCode = true
+  
 [core]
 	autocrlf = input
 	excludesFile = ~/.gitignore
 	attributesFile = ~/.gitattributes
+
 [commit]
 	; gpgsign = true
+  
 [diff]
 	submodule = log
+
 [submodule]
 	recurse = true
+
 [pull]
 	rebase = true
