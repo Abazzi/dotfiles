@@ -20,7 +20,7 @@ apt install -y zsh
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Configure Git\033[0m"
 echo -e "\033[32m ----------------------------------------\033[0m"
-git config --global user.email "8884041+Abazzi@users.noreply.github.com"
+git config --global user.email "adam@adambazzi.ca"
 git config --global user.name "Adam Bazzi"
 
 
@@ -63,6 +63,7 @@ echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Install nvm to manage NodeJS\033[0m"
 echo -e "\033[32m ----------------------------------------\033[0m"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
 # exec bash
 nvm install --lts
 nvm use --lts
@@ -83,6 +84,7 @@ echo -e "\033[32m Install golang based packages"
 echo -e "\033[32m ----------------------------------------\033[0m"
 go install github.com/jesseduffield/lazygit@latest
 go install github.com/antonmedv/walk@latest
+go install github.com/jesseduffield/lazydocker@latest
 env CGO_ENABLED=0 go install -ldflags="-s -w" github.com/gokcehan/lf@latest
 
 echo 'deb [trusted=yes] https://repo.caarlos0.dev/apt/ /' | sudo tee /etc/apt/sources.list.d/caarlos0.list

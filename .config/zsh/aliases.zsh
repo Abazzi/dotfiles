@@ -11,16 +11,9 @@ alias tk="tmux kill-sess -t "
 
 alias la="ls -A"
 
-## Run Repo Gen Script
-alias rg="$HOME/repoGen/repoGen.sh"
-alias vd="$HOME/repoGen/viteDependencies.sh"
-
 # better ls
 alias ls="ls --color=auto --group-directories-first --time-style=iso --quoting-style=literal"
 alias la="ls -a"
-
-# cd into nvim config folder on Windows
-alias nvimcw="cd $HOME/AppData/Local/nvim"
 
 # source zsh config file
 alias szh="source ~/.zshrc"
@@ -54,8 +47,9 @@ alias syu="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && f
 
 ## Open Lazygit
 alias lg="lazygit"
-## WSL ONLY: Open Current Directory in Windows Explorer 
-alias explorer="explorer.exe ."
+
+## Open Lazydocker
+alias lzd="lazydocker"
 
 # Pomodoro aliases
 alias pWork="pomodoro 'work'"
