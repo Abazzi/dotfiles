@@ -15,6 +15,7 @@ apt install -y tmux && \
 apt install -y btop && \
 apt install -y stow && \
 apt install -y jq && \
+apt install -y kitty && \
 apt install -y zsh 
 
 echo -e "\033[32m ----------------------------------------\033[0m"
@@ -67,11 +68,6 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 # exec bash
 nvm install --lts
 nvm use --lts
-
-echo -e "\033[32m ----------------------------------------\033[0m"
-echo -e "\033[32m Copy Tmux Config and tmux-sessionizer"
-echo -e "\033[32m ----------------------------------------\033[0m"
-cp ~/.dotfiles/tmux/tmux-sessionizer ~/.local/bin/
 
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Install go (and remove old go installation if it exists)"
