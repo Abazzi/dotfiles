@@ -5,17 +5,38 @@
       "tag": "Kwin"
     },
     {
-      "title": "Maximize window : meta + up",
-      "tag": "Kwin"
+      "title": "Commit + Message: git cm",
+      "tag": "git"
     },
     {
-      "title": "Pomodoro 60: p60",
-      "tag": "Pomodoro"
+      "title": "Checkout into new branch: git cb",
+      "tag": "git"
     },
+    {
+      "title": "List Branches Message: git lb",
+      "tag": "git"
+    },
+    {
+      "title": "Delete Branches: git db",
+      "tag": "git"
+    },
+    {
+      "title": "Interactive Rebase: git rbi",
+      "tag": "git"
+    },
+    {
+      "title": "Create React App Repo using Vite: pnpm create vite my-vue-app --template react",
+      "tag": "vite"
+    },
+    {
+      "title": "Create React TS App Repo using Vite: pnpm create vite my-vue-app --template react-ts",
+      "tag": "vite"
+    }
   ],
-  "styles": {
-    "subtext": "#6c7086",
-    "accent": "#b4befe"
+  "styles": { 
+    "background": "2D353B",
+    "subtext": "#83C092",
+    "accent": "#e69875"
   }
 }
 

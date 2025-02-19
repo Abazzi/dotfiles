@@ -51,6 +51,9 @@ alias lg="lazygit"
 ## Open Lazydocker
 alias lzd="lazydocker"
 
+## Open musikcube (music player)
+alias mus="musikcube"
+
 # Pomodoro aliases
 alias pWork="pomodoro 'work'"
 alias pLongWork="pomodoro 'long-work'"

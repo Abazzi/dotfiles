@@ -16,7 +16,7 @@ end
 config.color_scheme = "Everforest Dark (Gogh)"
 
 -- Font
-config.font = wezterm.font("Maple Mono NF")
+config.font = wezterm.font("Fragment Mono")
 config.font_size = 15
 
 -- Etc.
