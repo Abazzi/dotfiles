@@ -49,13 +49,6 @@ echo -e "\033[32m ----------------------------------------\033[0m"
 git submodule init
 
 echo -e "\033[32m ----------------------------------------\033[0m"
-echo -e "\033[32m Build fzf for use in Telescope\033[0m"
-echo -e "\033[32m ----------------------------------------\033[0m"
-pushd ~/.local/share/nvim/lazy/telescope-fzf-native.nvim
-make
-popd
-
-echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Install tpm (Tmux Package Manager)"
 echo -e "\033[32m ----------------------------------------\033[0m"
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -72,8 +65,8 @@ nvm use --lts
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Install go (and remove old go installation if it exists)"
 echo -e "\033[32m ----------------------------------------\033[0m"
-wget https://go.dev/dl/go1.22.1.linux-amd64.tar.gz
-rm -rf /usr/local/go && tar -C /usr/local -xzf go1.22.1.linux-amd64.tar.gz
+wget https://go.dev/dl/go1.24.0.linux-amd64.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.24.0.linux-amd64.tar.gz
 
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Install golang based packages"
