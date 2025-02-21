@@ -36,7 +36,6 @@ echo -e "\033[32m ----------------------------------------\033[0m"
 cargo install \
   bat\
   bob\
-  silicon\
 
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Setup bob (Neovim Version Manager)"

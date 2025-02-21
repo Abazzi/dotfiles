@@ -16,8 +16,8 @@ end
 config.color_scheme = "Everforest Dark (Gogh)"
 
 -- Font
-config.font = wezterm.font("Fragment Mono")
-config.font_size = 15
+config.font = wezterm.font("CommitMono-cMoloko")
+config.font_size = 16
 
 -- Etc.
 config.warn_about_missing_glyphs = false
