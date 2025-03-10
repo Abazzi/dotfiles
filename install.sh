@@ -35,7 +35,7 @@ echo -e "\033[32m Install packages via cargo"
 echo -e "\033[32m ----------------------------------------\033[0m"
 cargo install \
   bat\
-  bob\
+  bob-nvim\
 
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Setup bob (Neovim Version Manager)"

@@ -9,21 +9,29 @@
       "⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣛⠛⠛⠛⠛⠛⢛⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀",
       "⠀⠀⠀⠀⠀⠿⣿⣿⣿⠿⠿⠀⠀⠀⠀⠀⠸⣿⣿⣿⣿⠿⠇⠀  ⠀⠀⠀⠀",
       "                              ",
-      "  Good Luck Setting This Up   ",
+      "     Install on Debian        ",
 
 # Repo for Dotfiles
+
+## Configs for
 
 - nvim
 - vim
 - zsh
 - tmux
-- git (.gitignore, .gitconfig)
+- git
 - wezterm
+- kitty
+- i3
+- picom
+
+## Assets and Scripts
 - Helper Scripts
 - Auto Hot Key
 - HHKB Layout file + Reference Images
-- install script
-- [gocheat](https://github.com/Achno/gocheat?tab=readme-ov-file#overview-) 
+- Install Script
+- Custom Commit Mono Font Files
+- Profile Pictures
 
 # Instructions 
 

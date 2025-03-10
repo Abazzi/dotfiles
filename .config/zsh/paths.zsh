@@ -1,7 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 export PATH="$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH"
 export PATH="$PATH:/usr/local/go/bin:$PATH:$HOME/go/bin:$PATH"
+export PATH="$HOME/.cargo:$PATH"
 export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket:$PATH"
 
 # Set default editor to neovim
