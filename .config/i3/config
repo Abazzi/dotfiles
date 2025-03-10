@@ -63,10 +63,10 @@ bindsym $mod+space exec --no-startup-id dmenu_run
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # Open Browser (Firefox)
-bindsym $mod+b firefox
+bindsym $mod+b exec firefox
 
 # Open File Explorer (Caja)
-bindsym $mod+f caja
+bindsym $mod+f exec caja
 
 # change focus
 bindsym $mod+j focus left
