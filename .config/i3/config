@@ -230,3 +230,8 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+# picom
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
+
+# disable screen turning off
+exec_always --no-startup-id xset s 0 0
