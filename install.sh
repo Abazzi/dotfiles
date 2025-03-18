@@ -16,14 +16,9 @@ apt install -y btop && \
 apt install -y stow && \
 apt install -y jq && \
 apt install -y kitty && \
+apt install -y i3 && \
+apt install -y j4-dmenu-desktop && \
 apt install -y zsh 
-
-echo -e "\033[32m ----------------------------------------\033[0m"
-echo -e "\033[32m Configure Git\033[0m"
-echo -e "\033[32m ----------------------------------------\033[0m"
-git config --global user.email "adam@adambazzi.ca"
-git config --global user.name "Adam Bazzi"
-
 
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Install Rust"
