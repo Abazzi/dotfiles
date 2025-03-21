@@ -138,3 +138,7 @@ function newReact {
 function newReactTs {
   pnpm create vite $1 --template react-ts 
 }
+
+function cdweb {
+  cd $HOME/repos/web_dev
+}
