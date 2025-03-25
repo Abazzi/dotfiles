@@ -142,3 +142,7 @@ function newReactTs {
 function cdweb {
   cd $HOME/repos/web_dev
 }
+
+function batlvl {
+  acpi -b
+}
