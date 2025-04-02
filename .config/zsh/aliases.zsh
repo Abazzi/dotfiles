@@ -54,6 +54,9 @@ alias lzd="lazydocker"
 ## Open musikcube (music player)
 alias mus="musikcube"
 
+## Fetch GitHub Repo issues 
+alias issues="gh issue list"
+
 # Pomodoro aliases
 alias pWork="pomodoro 'work'"
 alias pLongWork="pomodoro 'long-work'"
