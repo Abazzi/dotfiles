@@ -245,6 +245,7 @@ bar {
 # picom
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 exec --no-startup-id "setxkbmap -option ctrl:nocaps"
+exec_always --no-startup-id feh --bg-fill /home/adam/Pictures/8bit_creation.png
 
 # disable screen turning off
 exec_always --no-startup-id xset s 0 0

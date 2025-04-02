@@ -16,9 +16,12 @@ apt install -y btop && \
 apt install -y stow && \
 apt install -y jq && \
 apt install -y kitty && \
+apt install -y zsh  && \
+
+# i3wm Packages
 apt install -y i3 && \
 apt install -y j4-dmenu-desktop && \
-apt install -y zsh 
+apt install -y feh 
 
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Install Rust"
