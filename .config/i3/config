@@ -55,7 +55,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+space exec --no-startup-id dmenu_run
+bindsym $mod+space exec --no-startup-id rofi -show run
 bindsym $mod+Shift+space exec --no-startup-id j4-dmenu-desktop
 
 # A more modern dmenu replacement is rofi:
@@ -229,20 +229,22 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        output DP-2
-        status_command i3status
-}
+# bar {
+#         output DP-2
+#         status_command i3status
+# }
+#
+# bar {
+#         output HDMI-0
+#         status_command i3status
+# }
+#
+# bar {
+#         output eDP
+#         status_command i3status
+# }
 
-bar {
-        output HDMI-0
-        status_command i3status
-}
-
-bar {
-        output eDP
-        status_command i3status
-}
+exec_always -no-startup-id polybar bar1 &
 # picom
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 exec --no-startup-id "setxkbmap -option ctrl:nocaps"

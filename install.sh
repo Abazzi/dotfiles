@@ -22,6 +22,8 @@ apt install -y zsh  && \
 apt install -y i3 && \
 apt install -y j4-dmenu-desktop && \
 apt install -y feh 
+apt install -y rofi && \
+apt install -y polybar && \
 
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Install Rust"
