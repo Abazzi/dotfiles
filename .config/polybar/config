@@ -25,7 +25,7 @@ secondary = #8ABEB7
 alert = #A54242
 disabled = #707880
 
-[bar/example]
+[bar/bar1]
 width = 100%
 height = 24pt
 radius = 6
@@ -168,5 +168,4 @@ label-foreground = ${colors.primary}
 [settings]
 screenchange-reload = true
 pseudo-transparency = true
-
 ; vim:ft=dosini
