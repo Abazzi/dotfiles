@@ -17,13 +17,13 @@
 ;==========================================================
 
 [colors]
-background = #282A2E
-background-alt = #373B41
-foreground = #C5C8C6
-primary = #F0C674
-secondary = #8ABEB7
-alert = #A54242
-disabled = #707880
+background = #272e33
+background-alt = #1e2326
+foreground = #d3c6aa
+primary = #a7c080
+secondary = #dbbc7f
+alert = #e67e80
+disabled = #9da9a0
 
 [bar/bar1]
 monitor= ${env:MONITOR:}
