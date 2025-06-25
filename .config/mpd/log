@@ -6988,3 +6988,22 @@ Jun 19 20:32 : output: Failed to open mixer for 'My ALSA Device': no such mixer 
 Jun 19 20:33 : output: Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
 Jun 19 20:37 : output: Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
 Jun 19 20:38 : output: Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+Jun 25 09:49 : exception: Failed to decode /media/adam/Media_Drive/Media/Music/aya/[E]  hexed! [412845573] [2025]/01 - aya - I am the pipe I hit myself with(Explicit).flac; Failed to open '/media/adam/Media_Drive/Media/Music/aya/[E]  hexed! [412845573] [2025]/01 - aya - I am the pipe I hit myself with(Explicit).flac': No such file or directory
+Jun 25 09:49 : player: played "aya/[E]  hexed! [412845573] [2025]/01 - aya - I am the pipe I hit myself with(Explicit).flac"
+Jun 25 10:03 : mixer: Failed to read mixer for 'My ALSA Device': no such mixer control: PCM
+Jun 25 10:03 : output: Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+Jun 25 10:03 : output: Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+Jun 25 10:06 : output: Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+Jun 25 15:30 : output: Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+Jun 25 15:35 : player: played "A Tribe Called Quest/[E]  We got it from Here... Thank You 4 Your service [66961064] [2016]/CD1/01 - A Tribe Called Quest - The Space Program(Explicit).flac"
+Jun 25 15:38 : player: played "A Tribe Called Quest/[E]  We got it from Here... Thank You 4 Your service [66961064] [2016]/CD1/02 - A Tribe Called Quest - We The People(Explicit).flac"
+Jun 25 15:41 : player: played "A Tribe Called Quest/[E]  We got it from Here... Thank You 4 Your service [66961064] [2016]/CD1/03 - A Tribe Called Quest - Whateva Will Be (feat. Consequence)(Explicit).flac"
+Jun 25 15:45 : player: played "A Tribe Called Quest/[E]  We got it from Here... Thank You 4 Your service [66961064] [2016]/CD1/04 - A Tribe Called Quest - Solid Wall of Sound (feat. Busta Rhymes, Jack White & Elton John)(Explicit).flac"
+Jun 25 15:48 : player: played "A Tribe Called Quest/[E]  We got it from Here... Thank You 4 Your service [66961064] [2016]/CD1/05 - A Tribe Called Quest - Dis Generation (feat. Busta Rhymes)(Explicit).flac"
+Jun 25 15:52 : player: played "A Tribe Called Quest/[E]  We got it from Here... Thank You 4 Your service [66961064] [2016]/CD1/06 - A Tribe Called Quest feat. André 3000 - Kids... (feat. Andre 3000)(Explicit).flac"
+Jun 25 15:57 : output: Failed to open mixer for 'My ALSA Device': no such mixer control: PCM
+Jun 25 16:00 : player: played "A Tribe Called Quest/[E]  We got it from Here... Thank You 4 Your service [66961064] [2016]/CD1/07 - A Tribe Called Quest - Melatonin (feat. Marsha Ambrosius & Yebba)(Explicit).flac"
+Jun 25 16:04 : player: played "A Tribe Called Quest/[E]  We got it from Here... Thank You 4 Your service [66961064] [2016]/CD1/08 - A Tribe Called Quest - Enough!!(Explicit).flac"
+Jun 25 16:07 : player: played "A Tribe Called Quest/[E]  We got it from Here... Thank You 4 Your service [66961064] [2016]/CD2/01 - A Tribe Called Quest - Mobius (feat. Busta Rhymes & Consequence)(Explicit).flac"
+Jun 25 16:10 : player: played "A Tribe Called Quest/[E]  We got it from Here... Thank You 4 Your service [66961064] [2016]/CD2/02 - A Tribe Called Quest - Black Spasmodic (feat. Consequence)(Explicit).flac"
+Jun 25 16:12 : player: played "A Tribe Called Quest/[E]  We got it from Here... Thank You 4 Your service [66961064] [2016]/CD2/03 - A Tribe Called Quest - The Killing Season (feat. Kanye West, Consequence & Talib Kweli)(Explicit).flac"
