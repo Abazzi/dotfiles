@@ -51,11 +51,11 @@ alias lg="lazygit"
 ## Open Lazydocker
 alias lzd="lazydocker"
 
-## Open musikcube (music player)
-alias mus="musikcube"
-
 ## Fetch GitHub Repo issues 
 alias issues="gh issue list"
+
+## Open ncmpcpp
+alias ncmp="ncmpcpp"
 
 # Pomodoro aliases
 alias pWork="pomodoro 'work'"

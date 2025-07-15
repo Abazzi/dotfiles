@@ -1,0 +1,15 @@
+name: aurora
+primary: '#4a90e2'
+secondary: '#50e3c2'
+accent: '#b8e986'
+background: '#1c2331'
+surface: '#2c3e50'
+error: '#e74c3c'
+warning: '#f39c12'
+success: '#2ecc71'
+panel: '#34495e'
+dark: true
+
+author: Darren Burns
+description: An example theme.
+homepage: https://github.com/darrenburns/posting
