@@ -143,6 +143,10 @@ function cdweb {
   cd $HOME/repos/web_dev
 }
 
+function eslintGen {
+  pnpm create @eslint/config@latest
+}
+
 function batlvl {
   acpi -b
 }
