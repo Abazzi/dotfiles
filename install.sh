@@ -40,6 +40,7 @@ cargo install \
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Setup bob (Neovim Version Manager)"
 echo -e "\033[32m ----------------------------------------\033[0m"
+bob install stable
 bob use stable
 
 echo -e "\033[32m ----------------------------------------\033[0m"
@@ -60,6 +61,12 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 # exec bash
 nvm install --lts
 nvm use --lts
+
+echo -e "\033[32m ----------------------------------------\033[0m"
+echo -e "\033[32m Install Posting API Client and dependencies"
+echo -e "\033[32m ----------------------------------------\033[0m"
+curl -LsSf https://astral.sh/uv/install.sh | sh
+uv tool install --python 3.12 posting
 
 echo -e "\033[32m ----------------------------------------\033[0m"
 echo -e "\033[32m Install go (and remove old go installation if it exists)"
