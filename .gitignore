@@ -1,2 +1,6 @@
 ./fonts/.uuid
 *.AppImage
+./.config/mpd/database
+./.config/mpd/log
+./.config/mpd/state
+./.config/mpd/sticker.sql
