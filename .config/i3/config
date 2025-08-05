@@ -176,7 +176,7 @@ set $ws10 "10"
 # Assign Workspaces to Each Monitor
 workspace $ws1 output $monitor_left
 workspace $ws2 output $monitor_left
-workspace $ws3 output $monitor_right
+workspace $ws3 output $monitor_left
 workspace $ws4 output $monitor_right
 workspace $ws5 output $monitor_right
 workspace $ws6 output $monitor_right
