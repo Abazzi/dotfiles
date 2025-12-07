@@ -70,6 +70,8 @@ alias p50="pomodoro 'fifty'"
 alias p60="pomodoro 'hour'"
 alias p90="pomodoro 'ninety'"
 
+
 ## Sync Photos and Music to pixeldrain
-alias syncMusic="rclone sync /media/adam/Media_Drive/Media/Music pixeldrainfs:Music"
-alias syncPhotos="rclone sync /media/adam/Media_Drive/Media/Photos pixeldrainfs:Photos"
+alias syncMusic="rclone sync $MUSIC_DIR pixeldrain:Music -P"
+alias syncPhotos="rclone sync $PHOTOS_DIR pixeldrain:Photos -P"
+alias syncBooks="rclone sync $BOOKS_DIR pixeldrain:Books -P"
