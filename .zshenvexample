@@ -1,0 +1,5 @@
+## Fill out after cloning
+export BOOKS_DIR=1
+export PHOTOS_DIR=2
+export MUSIC_DIR=3
+

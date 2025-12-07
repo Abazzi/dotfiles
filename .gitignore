@@ -4,3 +4,4 @@
 .config/mpd/log
 .config/mpd/state
 .config/mpd/sticker.sql
+.zshenv
