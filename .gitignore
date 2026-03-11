@@ -1,7 +1,2 @@
-./fonts/.uuid
-*.AppImage
-.config/mpd/database
-.config/mpd/log
-.config/mpd/state
-.config/mpd/sticker.sql
-.zshenv
+# Created by venv; see https://docs.python.org/3/library/venv.html
+*
